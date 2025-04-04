@@ -50,6 +50,9 @@ Este e-commerce está en desarrollo y se está construyendo con:
 - 💠 Bootstrap  
 - ⚙️ JavaScript
 
+#### 🔧 Backend
+- ☕ Java con Spring Boot
+
 
 
 
