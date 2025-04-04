@@ -53,7 +53,8 @@ Este e-commerce está en desarrollo y se está construyendo con:
 #### 🔧 Backend
 - ☕ Java con Spring Boot
 
-
+#### 🗄️ Base de datos
+- 🐬 MySQL
 
 
 
