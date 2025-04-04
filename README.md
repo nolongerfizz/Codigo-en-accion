@@ -40,6 +40,7 @@ git clone https://github.com/devrave/Codigo-en-accion.git
 
 ## 🚧 En desarrollo
 
+Este e-commerce está en desarrollo y se está construyendo con:
 
 
 
