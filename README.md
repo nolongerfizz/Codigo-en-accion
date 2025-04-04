@@ -42,6 +42,13 @@ git clone https://github.com/devrave/Codigo-en-accion.git
 
 Este e-commerce está en desarrollo y se está construyendo con:
 
+### 🛠️ Tecnologías en uso
+
+#### 🎨 Frontend
+- 🌐 HTML  
+- 🎨 CSS  
+- 💠 Bootstrap  
+- ⚙️ JavaScript
 
 
 
