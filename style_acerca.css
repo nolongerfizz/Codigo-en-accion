@@ -13,8 +13,118 @@
     --atelier-piel-suave: #FFE9DA;     /* Tono piel claro, perfecto para personajes */
   }
 
-footer{
-    color: var(--atelier-cian-celeste) ;
-    font-family: 'Quicksand', sans-serif;
+/* SECCIÓN QUIENES SOMOS */
+#quienes-somos {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--atelier-blanco-nube);
+  padding: 0 auto;
+  margin: 0 auto;
 }
 
+#titulo-quienes {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--atelier-rosa-ternura);
+  margin-bottom: 30px;
+  padding: 0 auto;
+}
+
+.info-quienes {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: justify;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--atelier-negro-hilo);
+}
+
+.card {
+  border-radius: 20px;
+  border: none;
+  background-color: var(--atelier-blanco-nube) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: var(--atelier-cian-celeste);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.card-text {
+  color: var(--atelier-negro-hilo);
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+@media (max-width: 768px) {
+  #quienes-somos {
+      padding: 30px 40px;
+  }
+
+  #titulo-quienes {
+      font-size: 28px;
+  }
+
+  .info-quienes {
+      font-size: 16px;
+      padding: 0 10px;
+  }
+
+  .card {
+      margin-bottom: 30px;
+  }
+}
+
+/* Móvil: hasta 480px */
+@media (max-width: 480px) {
+  #quienes-somos {
+      padding: 20px 20px;
+  }
+
+  #titulo-quienes {
+      font-size: 24px;
+  }
+
+  .info-quienes {
+      font-size: 15px;
+      padding: 0 10px;
+  }
+
+  .card-title {
+      font-size: 18px;
+  }
+
+  .card-text {
+      font-size: 14px;
+  }
+}
+/* SECCIÓN FOOTER*/
+footer{
+  color: var(--atelier-negro-hilo) ;
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--atelier-piel-suave);
+}
+#copyright{
+height: 50%;
+width: 70%;
+display: block;
+margin-left: 30%;
+}
+.iconos-footer{
+display: flex;
+justify-content: center; /* centra horizontalmente */
+gap: 20px; /* espacio entre iconos */
+align-items: center; /* centra verticalmente si hay texto */
+}
