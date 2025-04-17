@@ -14,7 +14,20 @@
   }
 
 footer{
-    color: var(--atelier-cian-celeste) ;
+    color: var(--atelier-negro-hilo) ;
     font-family: 'Quicksand', sans-serif;
+    background-color: var(--atelier-piel-suave);
+}
+#copyright{
+  height: 50%;
+  width: 70%;
+  display: block;
+  margin-left: 30%;
+}
+.iconos-footer{
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  gap: 20px; /* espacio entre iconos */
+  align-items: center; /* centra verticalmente si hay texto */
 }
 
