@@ -12,6 +12,13 @@
     --atelier-cian-celeste: #83CDE2;   /* Cian suave, como un cielo bordado */
     --atelier-piel-suave: #FFE9DA;     /* Tono piel claro, perfecto para personajes */
   }
+/* UNIVERSAL */
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+  }
 
 
 /* SECCION INTRO  */
@@ -146,21 +153,156 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
       font-size: 14px;
   }
 }
+
+/* SECCIÓN CONOCENOS */
+#equipo {
+    padding: 2rem 1rem;
+    background-color: var(--atelier-piel-suave);
+    text-align: center;
+  }
+  
+  #equipo h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--atelier-negro-hilo);
+  }
+  
+  .equipo-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* Tarjeta del equipo */
+  .card-conocenos{
+    background-color: var(--atelier-blanco-nube);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    width: 280px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-conocenos:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-conocenos img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--atelier-cian-celeste);
+    margin-bottom: 1rem;
+  }
+  
+  .card-conocenos h3 {
+    margin: 0.5rem 0 0.5rem;
+    font-weight: 600;
+    color: var(--atelier-negro-hilo);
+  }
+  
+  .card-conocenos p {
+    font-size: 0.95rem;
+    color: #333;
+    flex-grow: 1;
+  }
+  
+  /* --- RESPONSIVE --- */
+  
+  @media (max-width: 1440px) {
+    .equipo-contenedor {
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 750px) {
+    #equipo h2 {
+      font-size: 1.8rem;
+    }
+  
+    .card-conocenos {
+      width: 90%;
+      max-width: 300px;
+    }
+  
+    .card-conocenos img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    #equipo {
+      padding: 1.5rem 1rem;
+    }
+  
+    #equipo h2 {
+      font-size: 1.5rem;
+    }
+  
+    .card-conocenos img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .card-conocenos p {
+      font-size: 0.85rem;
+    }
+  }
+
 /* SECCIÓN FOOTER*/
-footer{
-  color: var(--atelier-negro-hilo) ;
-  font-family: 'Quicksand', sans-serif;
-  background-color: var(--atelier-piel-suave);
-}
-#copyright{
-height: 50%;
-width: 70%;
-display: block;
-margin-left: 30%;
-}
-.iconos-footer{
-display: flex;
-justify-content: center; /* centra horizontalmente */
-gap: 20px; /* espacio entre iconos */
-align-items: center; /* centra verticalmente si hay texto */
-}
+footer {
+    color: var(--atelier-negro-hilo);   
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 2px solid var(--atelier-negro-hilo); /* línea negra arriba */
+  }
+  
+  .contenido-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  #copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 0;
+    max-width: 90%;
+  }
+  
+  .iconos-footer {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .iconos-footer a {
+    color: var(--atelier-negro-hilo); 
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .iconos-footer a:hover {
+    transform: scale(1.2);
+    color: var(--atelier-cian-celeste); 
+  }
+  
+  /* Pantalla Web: 1440px */
+  @media (min-width: 1025px) {
+    .contenido-footer {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 1200px
+    }
+  }    
