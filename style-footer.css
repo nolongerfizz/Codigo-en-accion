@@ -17,6 +17,7 @@ footer{
     color: var(--atelier-negro-hilo) ;
     font-family: 'Quicksand', sans-serif;
     background-color: var(--atelier-piel-suave);
+    
 }
 #copyright{
   height: 50%;
@@ -29,5 +30,8 @@ footer{
   justify-content: center; /* centra horizontalmente */
   gap: 20px; /* espacio entre iconos */
   align-items: center; /* centra verticalmente si hay texto */
+}
+a{
+  color: var(--atelier-negro-hilo);
 }
 
