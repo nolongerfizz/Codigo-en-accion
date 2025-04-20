@@ -21,6 +21,67 @@
   }
 
 
+  header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #FFB5C2;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  
+
+  .left-group {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* espacio entre logo y nav */
+  }
+
+  .logo {
+    margin-left: 70px; /* espacio exacto para que el texto no toque el muñeco */
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+  }
+  
+  
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+  }
+  
+  .icons i {
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .icons i:hover {
+    color: #d81b60;
+  }
+  
+  .logo-muñeco {
+    position: absolute;
+    top: 5px; /* ajusta si lo quieres un pelín más arriba/abajo */
+    left: 10px;
+    width: 90px;
+    z-index: 10;
+    pointer-events: none;
+  }
+  ;
+
+
+header {
+    position: relative; /* necesario para posicionar al muñeco dentro del header */
+}
+
+
+
 /* SECCION INTRO  */
 h1 {
   color: var(--atelier-negro-hilo); /* Aplica el color negro personalizado definido en la paleta de colores */
