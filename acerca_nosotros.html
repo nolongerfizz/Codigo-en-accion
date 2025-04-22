@@ -3,11 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Menu hamburguesa icono-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>Sobre Nosotros</title>
     <link rel="stylesheet" href="style_acerca.css">
+    
 </head>
 <body>
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci vero minus iste eius nisi, hic repellat, nihil laborum voluptatibus dolor assumenda nam iure natus repudiandae eos culpa excepturi, impedit asperiores?</h1>
+     <!-- Nav Liz Martinez -->
+     <header>
+      <!-- Logo + Texto -->
+      <div class="left-group">
+        <img src="assets/LOGO.png" alt="logo muñeco" class="logo-muñeco">
+      </div>
     
+      <!-- Navegación estándar -->
+      <nav class="nav-group">
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+      </nav>
+    
+      <!-- Icono login (solo visible en escritorio) -->
+      <div class="icons">
+        <a href="#" class="login">
+          <i class="fa fa-user"></i>
+        </a>
+      </div>
+    
+      <!-- Botón menú hamburguesa (solo visible en responsive) -->
+      <div class="nav-responsive" id="menu-toggle">
+        <i class="fa fa-bars"></i>
+      </div>
+    
+      <!-- Menú desplegable responsive -->
+      <ul class="menu-responsive-links" id="responsive-menu">
+        <a href="#">Regístrate</a>
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+      </ul>
+    </header>
+  <main>
+    <!-- INTRO SECTION Anderson -->
+    <section id="intro" class="intro">
+      <div class="intro-content">
+        <!-- Titulo y Descripcion -->
+        <div class="intro-text">
+          <h1>Amigurumis Atelier</h1>
+          <p>Donde tus emociones se convierten en amigurumis con historia.</p>
+        </div>    
+        <!--Amigurumi Imagen -->
+        <div class="intro-image">
+          <img src="/assets/Lcatsinfondo.png" alt="Amigurumi L">
+        </div>
+      </div>
+    </section>
+    <!-- QUIÉNES SOMOS angela -->
+    <section id="quienes-somos" class="quienes-somos">
+        <!-- Información sobre quiénes somos -->
+          <h2 id="titulo-quienes">¿Quiénes Somos?</h2>
+          <p class="info-quienes">Somos un e-commerce de amigurumis personalizados, diseñados para conectar emocionalmente con quienes buscan más que un objeto decorativo. 
+            Nuestros productos ofrecen historias, cariño y acompañamiento, creando pequeños compañeros que brindan consuelo, alegría y un sentido de pertenencia. 
+            Con cada amigurumi, buscamos regalar momentos especiales, cargados de emoción y significado.</p>
+        <div class="container py-5">  
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-5 mb-4">
+              <div class="card text-bg-light">
+                <div class="card-body">
+                  <h5 class="card-title">Misión</h5>
+                  <p class="card-text">Crear amigurumis con alma, diseñados para transmitir emociones y contar historias únicas. 
+                    Más que simples figuras tejidas, cada pieza lleva un mensaje personalizado que refleja los sentimientos, recuerdos y deseos de quien la recibe. 
+                    A través de nuestros amigurumis, buscamos brindar compañía, confort y significado, convirtiéndolos en pequeños guardianes de momentos especiales y vínculos emocionales profundos.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-5 mb-4">
+              <div class="card text-bg-light">
+                <div class="card-body">
+                  <h5 class="card-title">Visión</h5>
+                  <p class="card-text">Convertirnos en la tienda virtual líder en Bogotá y zonas aledañas en la venta de amigurumis con valor emocional, 
+                    en un plazo de cinco años, construyendo una comunidad que comparte y regala con amor.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+    </section>
+    <!-- CONOCE AL EQUIPO andres -->
+    <section id="equipo" class="equipo">
+        <h2>Conoce al equipo</h2>
+        <div class="equipo-contenedor">
+            <div class="card-conocenos">
+                <img src="./assets/Foto-perfil-angela.jpeg" alt="Foto de Angela">
+                <h3>Angela Laverde</h3>
+                <p>Soy Product Owner y guío al equipo de desarrollo para que el proyecto se mantenga alineado con nuestra intención de crear vínculos emocionales a través de amigurumis personalizados.</p>
+            </div>
+            <div class="card-conocenos">
+                <img src="./assets/AndresCanoProfile.jpg" alt="Foto Andrés Cano">
+                <h3>Andrés Cano</h3>
+                <p>Soy Scrum Master y facilito el trabajo colaborativo del equipo, asegurando entregas ágiles, organizadas y eficientes para el desarrollo de Amigurumis Atelier.</p>
+            </div>
+            <div class="card-conocenos">
+                <img src="./assets/foto-Denis.png" alt="Foto de Denis">
+                <h3>Denis Granados</h3>
+                <p>Desarrolladora Back, colaboro con el equipo asegurando que la pagina web funcione de manera segura, eficiente y garantizando una óptima experiencia para los usuarios.</p>
+            </div>
+            <div class="card-conocenos">
+                <img src="/assets/Foto-Anderson.png" alt="Foto de Anderson">
+                <h3>Anderson Gutiérrez</h3>
+                <p>Soy Anderson Gutiérrez, desarrollador backend apasionado por la tecnología y la creación de soluciones eficientes. Me motiva enfrentar desafíos técnicos y construir sistemas robustos que impulsen el rendimiento y la escalabilidad de los proyectos.</p>
+            </div>
+            <div class="card-conocenos">
+                <img src="./assets/Lizeth Martinez.png" alt="Foto de Lizeth">
+                <h3>Lizeth Martinez</h3>
+                <p>Desarrolladora Full Stack especializada en backend, creo soluciones robustas, seguras y escalables para potenciar tu negocio digital.</p>
+            </div>
+        </div>
+    </section>
+  </main>
+  <!-- FOOTER dennis -->
+  <footer id="pie-de-pagina" class="pie-de-pagina">
+    <!-- Información de contacto, redes sociales, derechos reservados -->
+     <div class="contenido-footer">
+      <p id="copyright">&copy; 2025 Amigurumis Atelier. Todos los derechos reservados.</p>
+      <div class="iconos-footer">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+     </div>
+  </footer>
+<script src="acerca_nosotros.js"></script>
 </body>
 </html>
