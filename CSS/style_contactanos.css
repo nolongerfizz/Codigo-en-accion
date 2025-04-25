@@ -1,0 +1,220 @@
+
+/* ======================= */
+/*    ESTILOS GENERALES    */
+/* ======================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
+    background: #ffeef2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* ======================= */
+  /* CONTENEDOR PRINCIPAL */
+  /* ======================= */
+  .contact-container {
+    background: #ffe0eb;
+    padding: 40px 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    width: 500px;
+    max-width: 90%;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .contact-container h2 {
+    font-size: 28px;
+    color: #2d2a32;
+    margin-bottom: 25px;
+  }
+  
+  /* ======================= */
+  /* CAMPOS DEL FORMULARIO */
+  /* ======================= */
+  input, textarea {
+    display: block;
+    width: 90%;
+    max-width: 100%;
+    padding: 14px;
+    margin: 0 auto 15px auto;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background: #fff;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #ff9abf;
+    background: #fff8fb;
+  }
+  
+  /* ======================= */
+  /* ÁREA DE TEXTO */
+  /* ======================= */
+  textarea {
+    resize: none;
+    height: 120px;
+  }
+  
+  /* ======================= */
+  /* CHECKBOX */
+  /* ======================= */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding-left: 5%;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  
+  .checkbox-container label {
+    font-size: 14px;
+    color: #2d2a32;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+  }
+  
+  
+  
+  /* ======================= */
+  /* BOTÓN DE ENVÍO */
+  /* ======================= */
+  button {
+    background: linear-gradient(135deg, #ff75a0, #ff527b);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 180px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #ff527b, #ff3465);
+    transform: translateY(-3px);
+  }
+  
+  /* ======================= */
+  /* MUÑECOS DECORATIVOS */
+  /* ======================= */
+  .muñeco {
+    position: fixed;
+    z-index: 0;
+  }
+  
+  .muñeco.izquierda {
+    bottom: 0;
+    left: -90px;
+    width: 350px;
+    transform: rotate(65deg);
+  }
+  
+  .muñeco.derecha {
+    top: -300px;
+    right: -300px;
+    width: 1000px;
+    transform: rotate(240deg);
+  }
+  
+  /* ======================= */
+  /* MENSAJES DE VALIDACIÓN */
+  /* ======================= */
+  #form-messages p {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  #form-messages p.success {
+    background-color: #ffe8f0;
+    color: #cc2f72;
+    border: 1px solid #ffb3c9;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  #form-messages p.error {
+    background-color: #ffe0e0;
+    color: #a30000;
+    border: 1px solid #ff9a9a;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  
+  /* ======================= */
+  /* RESPONSIVE */
+  /* ======================= */
+  @media screen and (max-width: 600px) {
+    .contact-container {
+        padding: 30px 20px;
+    }
+  
+    input, textarea {
+        width: 100%;
+    }
+  
+    .checkbox-container {
+      flex-direction: row;
+      align-items: center;
+      padding-left: 5%;
+    }
+    
+  
+    button {
+        width: 100%;
+    }
+  }
+  
+  /* ======================= */
+  /* ANIMACIONES */
+  /* ======================= */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
