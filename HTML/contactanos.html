@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contáctanos</title>
+  <link rel="stylesheet" href="../CSS/style_contactanos.css">
+</head>
+<body>
+
+  <!-- Muñecos decorativos -->
+  <img src="../assets/Amigurumi 2.png" alt="Muñeco izquierda" class="muñeco izquierda">
+  <img src="../assets/Amigurumi 1.png" alt="Muñeco derecha" class="muñeco derecha">
+
+  <div class="contact-container">
+    <h2>Contáctanos <span class="emoji">✨</span></h2>
+    
+    <!-- Formulario -->
+    <form id="contactForm" action="https://formspree.io/f/meogoelb" method="POST">
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+      <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+      <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+      <!-- Checkbox alineado correctamente -->
+      <div class="checkbox-container">
+        <input type="checkbox" id="privacidad" name="privacidad" required>
+        <label for="privacidad">Acepto las políticas de privacidad</label>
+      </div>
+
+      <button type="submit">Enviar</button>
+
+      <!-- Contenedor para mensajes de validación -->
+      <div id="form-messages"></div>
+    </form>
+  </div>
+
+  <script src="../JS/contactanos.js"></script>
+
+</body>
+</html>

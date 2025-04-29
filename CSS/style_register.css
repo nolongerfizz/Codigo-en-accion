@@ -1,0 +1,93 @@
+:root {
+    --atelier-blanco-nube: #FCFCFC;
+    --atelier-negro-hilo: #000000;
+    --atelier-rosa-ternura: #FFB5C2;
+    --atelier-cian-celeste: #83CDE2;
+    --atelier-piel-suave: #FFE9DA;
+  }
+  
+/* General */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fef6f9;
+  }
+  
+  /* Contenedor principal */
+  .container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  /* Imagen */
+  .register-image {
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;  /* Añadido para mover la imagen a la derecha */
+  }
+  
+  .register-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Formulario */
+  .register-form {
+    flex: 0 0 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-form form {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Botón personalizado */
+  .btn-register {
+    background-color: #ff8fa3;
+    border: none;
+    width: 100%;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .btn-register:hover {
+    background-color: #ff6f91;
+  }
+  
+  /* Texto de enlace */
+  .login-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Media Query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .container-register {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .register-image {
+      display: none; /* Oculta la imagen en pantallas pequeñas */
+    }
+  
+    .register-form {
+      flex: none;
+      width: 100%;
+    }
+  
+    .register-form form {
+      max-width: 100%;
+    }
+  }
