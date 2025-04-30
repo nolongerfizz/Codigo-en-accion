@@ -9,6 +9,8 @@
     --atelier-rosa-ternura: #FFB5C2;   /* Rosa pastel, evoca dulzura y ternura */
     --atelier-cian-celeste: #83CDE2;   /* Cian suave, como un cielo bordado */
     --atelier-piel-suave: #FFE9DA;     /* Tono piel claro, perfecto para personajes */
+    --atelier-rosa-zakura:#EC407A ;     /* Tono piel claro, perfecto para personajes */
+    
   }
 /* UNIVERSAL */
   *{
@@ -60,7 +62,7 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
   text-align: center;
   font-size: 32px;
   font-weight: 700;
-  color: var(--atelier-rosa-ternura);
+  color: var(--atelier-rosa-zakura);
   margin-bottom: 30px;
   padding: 0 auto;
 }
@@ -90,7 +92,7 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
 }
 
 .card-title {
-  color: var(--atelier-cian-celeste);
+  color: var(--atelier-negro-hilo);
   font-weight: 700;
   font-size: 20px;
 }
@@ -149,8 +151,9 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
 /* SECCIÓN CONOCENOS */
 #equipo {
     padding: 2rem 1rem;
-    background-color: var(--atelier-piel-suave);
+    background-color: var(--atelier-rosa-ternura);
     text-align: center;
+    margin-bottom: 70px;
   }
   
   #equipo h2 {
@@ -191,7 +194,7 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--atelier-cian-celeste);
+    border: 4px solid var(--atelier-negro-hilo);
     margin-bottom: 1rem;
   }
   
