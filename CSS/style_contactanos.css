@@ -1,3 +1,18 @@
+/* Tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+/* Paleta de colores */
+:root {
+    --atelier-blanco-nube: #FCFCFC;    /* Casi blanco, como el hilo base o fondo */
+    --atelier-negro-hilo: #000000;     /* Negro, ideal para detalles como ojos o bordes */
+    --atelier-rosa-ternura: #FFB5C2;   /* Rosa pastel, evoca dulzura y ternura */
+    --atelier-cian-celeste: #83CDE2;   /* Cian suave, como un cielo bordado */
+    --atelier-piel-suave: #FFE9DA;     /* Tono piel claro, perfecto para personajes */
+    --atelier-rosa-zakura:#EC407A ;     /* Tono piel claro, perfecto para personajes */
+    
+  }
+
 
 /* ======================= */
 /*    ESTILOS GENERALES    */
@@ -5,29 +20,40 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
-    background: #ffeef2;
+    font-family: 'Quicksand', sans-serif;
+    background: var(--atelier-blanco-nube);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+    flex-direction: column;   
+    
   }
   
   /* ======================= */
   /* CONTENEDOR PRINCIPAL */
   /* ======================= */
+
+  .container-full{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+    position: relative;
+  }
+
+  .container-full img{
+    position: absolute;
+  }
+
   .contact-container {
-    background: #ffe0eb;
+    background: var(--atelier-blanco-nube); 
     padding: 40px 50px;
     border-radius: 25px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.60);
     width: 500px;
-    max-width: 90%;
-    position: relative;
+    max-width: 90%;    
     text-align: center;
     z-index: 1;
     animation: fadeIn 1s ease-in;
+    
   }
   
   .contact-container h2 {
@@ -39,7 +65,7 @@ body {
   /* ======================= */
   /* CAMPOS DEL FORMULARIO */
   /* ======================= */
-  input, textarea {
+   .input-form, textarea {
     display: block;
     width: 90%;
     max-width: 100%;
@@ -52,6 +78,7 @@ body {
     outline: none;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     background: #fff;
+    border: 1px solid #b0afaf;
   }
   
   input:focus,
@@ -101,13 +128,14 @@ body {
   /* ======================= */
   /* BOTÓN DE ENVÍO */
   /* ======================= */
-  button {
-    background: linear-gradient(135deg, #ff75a0, #ff527b);
-    color: white;
+  .button-submit {
+    background:var(--atelier-negro-hilo);
+    color: var(--atelier-blanco-nube);
     border: none;
     padding: 14px 24px;
     border-radius: 12px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
     width: 180px;
@@ -115,8 +143,8 @@ body {
     display: block;
   }
   
-  button:hover {
-    background: linear-gradient(135deg, #ff527b, #ff3465);
+  .button-submit:hover {
+    background:var(--atelier-rosa-zakura);
     transform: translateY(-3px);
   }
   
@@ -199,7 +227,7 @@ body {
     }
     
   
-    button {
+    .button-submit {
         width: 100%;
     }
   }
