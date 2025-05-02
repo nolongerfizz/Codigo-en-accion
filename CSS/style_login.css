@@ -1,56 +1,60 @@
-  /* Ocultar link registrar en el nav */
-  .link_register{
-    display: none;
+ /*Ocultar iniciar sesión en el nav  */
+  .login{
+    display: none;    
+  } 
+    
+  /* LOGIN */  
+  .mb-3 .btn-title {    
+    color: var(--atelier-negro-hilo);
+    font-weight: bolder;
+    display: inline-block;
+    text-align: center;
+    font-size: 2rem;    
   }
   
   /* Contenedor principal */
-  .container-register {
+  .container-login {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     gap: 2rem;
-    padding: 2rem;   
+    padding: 2rem;
   }
   
   /* Imagen */
-  .register-image {
-    width: 40%;
+  .login-image {
+    flex: 0 0 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 5%;  /* Añadido para mover la imagen a la derecha */
   }
   
-  .register-image img {
+  .login-image img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
   }
   
   /* Formulario */
-  .register-form {
-    width: 60%;
+  .login-form {
+    flex: 0 0 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-
-   
   }
   
-  .register-form form {
+  .login-form form {
     width: 100%;
     max-width: 500px;
     padding: 40px 50px;
     border-radius: 25px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.60);
-
-    
   }
   
   /* Botón personalizado */
-  .btn-register {
+  .btn-login {
     background-color: var(--atelier-negro-hilo);
     border: none;
     width: 100%;
@@ -58,7 +62,7 @@
     font-weight: 600;
   }
   
-  .btn-register:hover {
+  .btn-login:hover {
     background-color: var(--atelier-rosa-zakura);
     color: var(--atelier-blanco-nube);
   }
@@ -71,21 +75,21 @@
   
   /* Media Query para pantallas pequeñas */
   @media (max-width: 768px) {
-    .container-register {
+    .container-login {
       flex-direction: column;
       padding: 1rem;
     }
   
-    .register-image {
+    .login-image {
       display: none; /* Oculta la imagen en pantallas pequeñas */
     }
   
-    .register-form {
+    .login-form {
       flex: none;
       width: 100%;
     }
   
-    .register-form form {
+    .login-form form {
       max-width: 100%;
     }
   }

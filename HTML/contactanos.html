@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +8,14 @@
   crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <title>Contáctanos</title>
-  <link rel="stylesheet" href="/CSS/style_contactanos.css">
   <link rel="stylesheet" href="/CSS/style_header.css">
+  <link rel="stylesheet" href="/CSS/style_comunes.css">
+  <link rel="stylesheet" href="/CSS/style_contactanos.css">
   <link rel="stylesheet" href="/CSS/style_footer.css">
 </head>
-
 <body>
   <!-- Aquí está el header -->
   <div id="header"></div>
-
-  
-
   <div class="container-full">
     <!-- Muñecos decorativos -->
     <img src="../assets/Amigurumi 2.png" alt="Muñeco izquierda" class="muñeco izquierda">
@@ -32,29 +28,21 @@
         <input class="input-form" type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
         <input class="input-form" type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
         <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
-
         <!-- Checkbox alineado correctamente -->
         <div class="checkbox-container">
           <input type="checkbox" id="privacidad" name="privacidad" required>
           <label for="privacidad">Acepto las políticas de privacidad</label>
         </div>
-
         <button class="button-submit" type="submit">Enviar</button>
-
         <!-- Contenedor para mensajes de validación -->
         <div id="form-messages"></div>
       </form>
     </div>
   </div>
-
-
   <!-- Aqui está el foooter -->
   <div id="footer"></div>
-
   <script src="/JS/loader.js"></script>
   <script src="/JS/contactanos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-
 </body>
-
 </html>

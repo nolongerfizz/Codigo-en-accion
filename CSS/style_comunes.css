@@ -1,0 +1,18 @@
+/* Tipo de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+/* Paleta de colores */
+:root {
+    --atelier-blanco-nube: #FCFCFC;    /* Casi blanco, como el hilo base o fondo */
+    --atelier-cian-celeste: #83CDE2;   /* Cian suave, como un cielo bordado */
+    --atelier-rosa-zakura:#EC407A ;     /* Tono piel claro, perfecto para personajes */    
+    --atelier-rosa-ternura: #FFB5C2;   /* Rosa pastel, evoca dulzura y ternura */
+    --atelier-negro-hilo: #000000;     /* Negro, ideal para detalles como ojos o bordes */
+    --atelier-piel-suave: #FFE9DA;     /* Tono piel claro, perfecto para personajes */
+  }
+/* UNIVERSAL */
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+  }
