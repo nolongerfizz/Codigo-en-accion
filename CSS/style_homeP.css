@@ -1,0 +1,269 @@
+/*Parte Lizeth */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    background-color: var(--atelier-blanco-nube);
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: var(--atelier-negro-hilo);
+}
+
+.hero-text span {
+    color: var(--atelier-rosa-ternura);
+    font-weight: 700;
+}
+
+.hero-text p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: var(--atelier-negro-hilo);
+}
+
+.hero-text button {
+    padding: 12px 25px;
+    background-color: var(--atelier-negro-hilo);
+    color: var(--atelier-blanco-nube);
+    border: none;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 180px;
+    margin: 0 auto;
+}
+.hero-text button:hover{
+    background: var(--atelier-rosa-zakura);
+    transform: translateY(-3px);
+}
+
+.hero-image img {
+    max-width: 400px;
+}
+.hero-btn{
+    text-align: center;
+    text-decoration: none;
+    background: var(--atelier-negro-hilo);
+    color: var(--atelier-blanco-nube);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 180px;
+    margin: 0 auto;
+}
+.hero-btn:hover{
+    background: var(--atelier-rosa-zakura);
+    transform: translateY(-3px);
+}
+
+
+/*Parte Angela */
+.productos-home {
+    background-color: var(-atelier-blanco-nube);
+    padding: 40px 20px;
+}
+
+.contenedor-productos-home {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#titulo-pasos{
+    background-color: var(--atelier-rosa-ternura);
+    margin: 0px;
+    padding: 15px;
+    max-width: 100%;
+    
+}
+#titulo-pasos h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 40px;
+    padding: 2%;
+}
+
+/*Para los pasos*/
+.pasos-personalizacion {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.paso {
+    max-width: 300px;
+    flex: 1 1 200px;
+    padding-block: 25px;
+}
+
+.numero-paso {
+    display: inline-block;
+    background-color: var(--atelier-negro-hilo);
+    color: var(--atelier-blanco-nube);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+/*Para la personalización*/
+.secuencia-amigurumi1,
+.secuencia-amigurumi2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-amigurumi {
+    background-color: var(--atelier-blanco-nube);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.60);
+    width: 350px;
+    text-align: center;
+    overflow: hidden; /* 👈 Para que la imagen respete los bordes redondeados */
+    transition: transform 0.4s ease;
+}
+
+.card-amigurumi:hover {
+    transform: scale(1.05);
+}
+
+.card-amigurumi img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0; /* 👈 Asegura que no interfiera con el borde del contenedor */
+}
+
+.flecha i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--atelier-negro-hilo);
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+/*Botón*/
+.productos-home-enlace {
+    margin: 30px;
+    margin-bottom: 50px;
+}
+
+.productos-home-btn {
+    display: block;/* Block para centrado */
+    text-align: center;
+    text-decoration: none;
+    background: var(--atelier-negro-hilo);
+    color: var(--atelier-blanco-nube);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 180px;
+    margin: 0 auto;
+}
+
+.productos-home-btn:hover {
+    background: var(--atelier-rosa-zakura);
+    transform: translateY(-3px);
+}
+
+/* Media query para responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-image img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .secuencia-amigurumi1,
+    .secuencia-amigurumi2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-amigurumi {
+        width: 90%;
+    }
+
+    .pasos-personalizacion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-amigurumi {
+        width: 90%;
+    }
+
+    .flecha i {
+        transform: rotate(90deg);/* Rota la flecha a dirección hacia abajo */
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .hero-text p {
+        font-size: 13px;
+    }
+
+    .hero-image img {
+        max-width: 80%;
+    }
+    
+    .numero-paso {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+    }
+
+    .flecha i {
+        transform: rotate(90deg);
+    }
+}
