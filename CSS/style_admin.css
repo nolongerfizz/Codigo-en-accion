@@ -1,0 +1,85 @@
+#admin-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+    background-color: var(--atelier-blanco-nube);
+    
+  }
+  
+  /* Contenedor del formulario */
+  .admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 500px;
+    
+  }
+  
+  /* Título encima del formulario */
+  .admin-title {
+    font-size: 2rem;
+    color: var(--atelier-rosa-zakura);
+    font-weight: 700;  
+    
+  }
+  
+  /* Estilos del formulario */
+  
+.admin-form {
+  width: 100%;            
+  max-width: 800px;     
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.60);
+  background-color: var(--atelier-blanco-nube);
+}
+  
+  /* Estilos de los grupos de formulario */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-label {
+    display: block;
+    font-weight: bold;
+    color: var(--atelier-negro-hilo);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Estilo para los inputs con bordes transparentes */
+  .form-input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.3);  /* Transparencia en el borde */
+    border-radius: 8px;
+    background-color: #fff;
+    color: var(--atelier-negro-hilo);
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: var(--atelier-rosa-zakura);
+    box-shadow: 0 0 5px var(--atelier-rosa-zakura);
+  }
+  
+  /* Botón del formulario */
+  .form-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--atelier-negro-hilo);  /* Botón negro */
+    color: var(--atelier-blanco-nube);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:hover {
+    background-color: var(--atelier-rosa-zakura);  /* Hover con color rosa */
+  }
