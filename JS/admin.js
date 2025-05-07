@@ -24,7 +24,11 @@ form.addEventListener('submit', function (event) {
   products.push(product);
 
   // Mostrar el array completo de productos en consola
-  console.log("Lista de productos:", JSON.stringify(products, null, 2));console.log(products);
+  console.log("Lista de productos:", JSON.stringify(products, null, 2));
+  
+
+  // Guardar productos en localStorage
+  localStorage.setItem('products', JSON.stringify(products));
 
   // Limpiar el formulario
   form.reset();
