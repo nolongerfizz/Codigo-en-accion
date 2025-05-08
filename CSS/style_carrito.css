@@ -108,7 +108,7 @@ body {
   }
   
   .resumen-card {
-    border: 1px solid #111;
+    border: 1px solid var(--atelier-negro-hilo);
     border-radius: 6px;
     background: var(--atelier-blanco-nube);
     padding: 28px 24px 24px 24px;
