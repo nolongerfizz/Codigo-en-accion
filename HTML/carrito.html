@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="../CSS/style_carrito.css" />
+</head>
+<body>
+  <div class="carrito-main">
+    <!-- Columna izquierda -->
+    <section class="carrito-izq">
+      <h2>TU CARRITO</h2>
+      <div id="carrito-lista">
+        <!-- Tarjeta 1 -->
+        <div class="producto-card">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/56926065/fmSuqCdFqIhXChq/image.jpg" alt="Amigurumi Gato Version L">
+          <div class="info">
+            <span class="cerrar">&times;</span>
+            <div class="nombre">Amigurumi Gato Version L</div>
+            <div class="precio">$ 200.000</div>
+          </div>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="producto-card">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/56926065/fmSuqCdFqIhXChq/image.jpg" alt="Amigurumi Conejo Version Naruto">
+          <div class="info">
+            <span class="cerrar">&times;</span>
+            <div class="nombre">Amigurumi Conejo Version Naruto</div>
+            <div class="precio">$ 185.000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Columna derecha -->
+    <aside class="carrito-der">
+      <div class="resumen-card">
+        <h2>RESUMEN DEL PEDIDO</h2>
+        <div class="resumen-linea">
+          <span>2 Productos</span>
+          <span>$ 385.000</span>
+        </div>
+        <div class="resumen-linea">
+          <span>Entrega</span>
+          <span>$ 15.000</span>
+        </div>
+        <div class="resumen-linea">
+          <span>Descuento</span>
+          <span>$ 0</span>
+        </div>
+        <div class="resumen-linea resumen-total">
+          <span>Total</span>
+          <span>$ 400.000</span>
+        </div>
+        <input type="text" placeholder="Introduce tu código promocional" class="codigo-promo" />
+        <button class="btn-pagar">Ir a pagar &rarr;</button>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
