@@ -26,4 +26,11 @@ function loadComponent(id, url, callback) {
   
   // Cargar footer
   loadComponent("footer", "/components/footer.html");
-  
+
+  // Hide the loader once the page is fully loaded
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.style.display = 'none';
+    }
+  });

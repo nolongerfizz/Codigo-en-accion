@@ -43,6 +43,10 @@
     color: var(--atelier-blanco-nube);
     transition: 0.5s ease;
   }
+
+  nav .inicio{
+    display: none;
+  }
   
   /* Icono login */
 
@@ -122,6 +126,10 @@
     font-weight: 600;
     font-size: 18px;
     transition: color 0.3s;
+  }
+
+  .menu-responsive-links .inicio{
+    display: none;
   }
   
   .menu-responsive-links a:hover {
