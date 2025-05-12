@@ -1,14 +1,18 @@
   /* Header */
-  header {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: var(--atelier-rosa-ternura);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    z-index: 100;
-  }
+  /* Header */
+header {
+  position: fixed; /* Stick to the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--atelier-rosa-ternura);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000; /* Ensure it's above everything */
+}
   
   /* Logo */
   .left-group {
@@ -42,6 +46,10 @@
   nav a:hover {
     color: var(--atelier-blanco-nube);
     transition: 0.5s ease;
+  }
+
+  nav .inicio{
+    display: none;
   }
   
   /* Icono login */
@@ -122,6 +130,10 @@
     font-weight: 600;
     font-size: 18px;
     transition: color 0.3s;
+  }
+
+  .menu-responsive-links .inicio{
+    display: none;
   }
   
   .menu-responsive-links a:hover {

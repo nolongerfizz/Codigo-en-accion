@@ -1,0 +1,120 @@
+:root {
+  --atelier-rosa-zakura: #EC407A;
+  --atelier-rosa-ternura: #FFB5C2;
+  --atelier-negro-hilo: #000000;
+  --atelier-piel-suave: #FFE9DA;
+  --atelier-blanco-nube: #FCFCFC;
+}
+
+/* Estructura general */
+.modal-amigurumi {
+  background-color: var(--atelier-blanco-nube);
+  border-radius: 18px;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado */
+.modal-header h4 {
+  font-weight: 600;
+  color: var(--atelier-rosa-zakura);
+}
+
+/* Imagen */
+.modal-img-container {
+  background-color: var(--atelier-piel-suave);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modal-img {
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Campos de texto */
+.modal-name,
+.modal-desc {
+  background-color: var(--atelier-blanco-nube);
+  border: 1px solid var(--atelier-rosa-ternura);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--atelier-negro-hilo);
+}
+
+/* Etiquetas */
+.form-label {
+  color: var(--atelier-negro-hilo);
+  font-weight: 500;
+}
+
+/* Botones generales */
+.btn-size,
+.btn-submit,
+.btn-generar {
+  background-color: var(--atelier-negro-hilo);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-size:hover,
+.btn-submit:hover,
+.btn-generar:hover {
+  background-color: var(--atelier-rosa-zakura);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Botón activo */
+.btn-size.active {
+  background-color: var(--atelier-rosa-zakura);
+  color: white;
+}
+
+/* Botón "Personalizar" */
+.btn-generar {
+  background-color: var(--atelier-negro-hilo);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-weight: 500;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+/* Empaque especial visible */
+.form-check-lg {
+  font-size: 1rem;
+  background-color: var(--atelier-piel-suave);
+  border: 2px solid var(--atelier-rosa-ternura);
+}
+
+/* Precio total */
+#precioFinal {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--atelier-rosa-zakura);
+}
+
+.modal-img.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-img.fade-in {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+

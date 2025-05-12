@@ -6,19 +6,30 @@ display: flex; /* Usa flexbox para alinear elementos en una fila */
 align-items: center; /* Centra los elementos verticalmente dentro del contenedor */
 justify-content: space-between; /* Deja espacio entre los elementos (texto a la izquierda, imagen a la derecha) */
 gap: 2rem; /* Espacio entre los elementos hijos (texto e imagen) */
-padding: 2rem; /* Espacio interno alrededor del contenido */
+padding: 1rem 2rem; /* Espacio interno alrededor del contenido */
+margin-top: 8rem;
 }
 
 /* Contenedor del texto (lado izquierdo) */
 .intro-text {
   flex: 1; /* Ocupa la mitad del espacio disponible (o más si es necesario) */
   font-family: 'Quicksand', sans-serif; /* Usa la misma fuente para mantener consistencia */
+  color: var(--atelier-negro-hilo);
+}
+
+.intro-text h1{
+  font-size: 44px;
+}
+.intro-text p{
+  margin-top: 5%;
+  font-size: 20px;
 }
 
 /* Contenedor de la imagen (lado derecho) */
 .intro-image {
 flex: 1; /* Ocupa el mismo espacio que el texto */
-text-align: right; /* Alinea la imagen a la derecha del contenedor */
+text-align: right;/* Alinea la imagen a la derecha del contenedor */
+margin-right: 50px; 
 }
 
 /* Estilo para la imagen dentro del contenedor */
@@ -29,114 +40,130 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
 }
 
 /* SECCIÓN QUIENES SOMOS */
+/* Sección general */
 #quienes-somos {
   font-family: 'Quicksand', sans-serif;
-  background-color: var(--atelier-blanco-nube);
-  padding: 0 auto;
+  background-color: var(--atelier-rosa-ternura);
+  padding: 5%;
   margin: 0 auto;
 }
 
+/* Título principal */
 #titulo-quienes {
   text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--atelier-rosa-zakura);
+  font-size: 40px;
+  color: var(--atelier-negro-hilo);
   margin-bottom: 30px;
-  padding: 0 auto;
 }
 
+/* Párrafo introductorio */
 .info-quienes {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 auto;
   text-align: justify;
-  justify-content: center;
   font-size: 18px;
   line-height: 1.5;
   color: var(--atelier-negro-hilo);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.card {
+/* Contenedor de tarjetas */
+.contenedor-card-quienes {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Estilo de cada tarjeta */
+.card-quienes {
+  background-color: var(--atelier-blanco-nube);
   border-radius: 20px;
-  border: none;
-  background-color: var(--atelier-blanco-nube) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  height: 100%;
+  padding: 24px;
+  max-width: 400px;
+  min-width: 250px;
+  flex: 1 1 300px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
-.card:hover{
+
+.card-quienes:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card-title {
+/* Título dentro de la tarjeta */
+.card-quienes h5 {
   color: var(--atelier-negro-hilo);
   font-weight: 700;
   font-size: 20px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.card-text {
+/* Texto dentro de la tarjeta */
+.card-quienes p {
   color: var(--atelier-negro-hilo);
   font-size: 16px;
   line-height: 1.6;
   text-align: justify;
 }
 
-
+/* Responsive: Tablets */
 @media (max-width: 768px) {
   #quienes-somos {
-      padding: 30px 40px;
+    padding: 30px 40px;
   }
 
   #titulo-quienes {
-      font-size: 28px;
+    font-size: 28px;
   }
 
   .info-quienes {
-      font-size: 16px;
-      padding: 0 10px;
+    font-size: 16px;
+    padding: 0 10px;
   }
 
-  .card {
-      margin-bottom: 30px;
+  .contenedor-card-quienes {
+    gap: 30px;
   }
 }
 
-/* Móvil: hasta 480px */
+/* Responsive: Móviles */
 @media (max-width: 480px) {
   #quienes-somos {
-      padding: 20px 20px;
+    padding: 20px;
   }
 
   #titulo-quienes {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .info-quienes {
-      font-size: 15px;
-      padding: 0 10px;
+    font-size: 15px;
   }
 
-  .card-title {
-      font-size: 18px;
+  .card-quienes h5 {
+    font-size: 18px;
   }
 
-  .card-text {
-      font-size: 14px;
+  .card-quienes p {
+    font-size: 14px;
   }
 }
 
 /* SECCIÓN CONOCENOS */
 #equipo {
     padding: 2rem 1rem;
-    background-color: var(--atelier-rosa-ternura);
+    background-color: var(--atelier-blanco-nube);
     text-align: center;
     margin-bottom: 70px;
   }
   
   #equipo h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
     color: var(--atelier-negro-hilo);
   }
   
@@ -151,15 +178,16 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
   .card-conocenos{
     background-color: var(--atelier-blanco-nube);
     border-radius: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     padding: 1.5rem;
-    width: 280px;
+    margin-bottom: 1rem;
+    width: 320px;
     min-height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    text-align: center;
+    text-align: justify;
     transition: transform 0.3s ease;
   }
   
@@ -172,7 +200,7 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--atelier-negro-hilo);
+    border: 2px solid var(--atelier-negro-hilo);
     margin-bottom: 1rem;
   }
   
@@ -184,7 +212,7 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
   
   .card-conocenos p {
     font-size: 0.95rem;
-    color: #333;
+    color: var(--atelier-negro-hilo);
     flex-grow: 1;
   }
   
@@ -196,6 +224,20 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
   }
   
   @media (max-width: 750px) {
+    .intro-image{
+      margin-right: 5px;
+    }
+    .intro-image img {
+      max-width: 100%; 
+      height: 280px; 
+    }
+    .intro-text h1{
+      font-size: 36px;
+    }
+    .intro-text p{
+      font-size: 18px;
+    }
+
     #equipo h2 {
       font-size: 1.8rem;
     }
@@ -210,8 +252,35 @@ border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable 
       height: 100px;
     }
   }
+  @media (max-width: 480px) {
+    .intro-image{
+      margin-right: 5px;
+    }
+    .intro-image img {
+      max-width: 100%; 
+      height: 250px; 
+    }
+    .intro-text h1{
+      font-size: 28px;
+    }
+    .intro-text p{
+      font-size: 15px;
+    }
+    .card-text p{
+      font-size: 13px;
+    }
+
+  }
   
   @media (max-width: 375px) {
+    .intro-image{
+      margin-right: 5px;
+    }
+    .intro-image img {
+      max-width: 100%; 
+      height: 200px; 
+      border-radius: 1rem; 
+    }
     #equipo {
       padding: 1.5rem 1rem;
     }

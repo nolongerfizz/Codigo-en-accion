@@ -10,7 +10,8 @@
     align-items: center;
     min-height: 100vh;
     gap: 2rem;
-    padding: 2rem;   
+    padding: 2rem; 
+    margin-top: 5rem;
   }
   
   /* Imagen */
@@ -34,9 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 
-   
   }
   
   .register-form form {
