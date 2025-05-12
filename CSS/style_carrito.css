@@ -1,3 +1,7 @@
+/* *{
+  border: solid, red;
+} */
+
 /* Paleta de colores */
 :root {
     --atelier-blanco-nube: #FCFCFC;
@@ -12,23 +16,26 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: var(--atelier-blanco-nube);
     margin: 0;
+    margin-top: 200px;
     padding: 0;
+    
   }
   
   .carrito-main {
     display: flex;
     align-items: flex-start;
     gap: 40px;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 16px;
+    margin-bottom: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0 16px;  
   }
   
   .carrito-izq {
     flex: 2 1 0;
     min-width: 200px;
     max-width: 600px;
-
+    margin-right: 50px;
   }
   
   .carrito-izq h2 {
@@ -52,7 +59,7 @@ body {
     border-radius: 6px;
     padding: 18px 22px;
     gap: 16px;
-    position: relative;
+    position: relative; 
   }
   
   .producto-card img {
@@ -105,8 +112,7 @@ body {
   
   .carrito-der {
     flex: 1 1 340px;
-    min-width: 280px;
-    max-width: 380px;
+    margin-left: 50px;
   }
   
   .resumen-card {
@@ -146,7 +152,7 @@ body {
   }
   
   .btn-pagar {
-    width: 50%;
+    width: 35%;
     background: var(--atelier-negro-hilo);
     color: var(--atelier-blanco-nube);
     border: none;
@@ -156,6 +162,8 @@ body {
     padding: 12px 0;
     cursor: pointer;
     transition: background 0.2s;
+    display: block;          /* Hace que el botón ocupe su propia línea */
+    margin: 0 auto;   
   }
   
   .btn-pagar:hover {
@@ -170,6 +178,7 @@ body {
     .carrito-der {
       max-width: none;
       margin-top: 24px;
+      min-width: 320px;
     }
   }
   
