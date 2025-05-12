@@ -5,6 +5,7 @@
     justify-content: space-between;
     padding: 60px 80px;
     background-color: var(--atelier-blanco-nube);
+    margin-top: 5rem;
 }
 
 .hero-text {

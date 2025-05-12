@@ -7,6 +7,7 @@ align-items: center; /* Centra los elementos verticalmente dentro del contenedor
 justify-content: space-between; /* Deja espacio entre los elementos (texto a la izquierda, imagen a la derecha) */
 gap: 2rem; /* Espacio entre los elementos hijos (texto e imagen) */
 padding: 1rem 2rem; /* Espacio interno alrededor del contenido */
+margin-top: 8rem;
 }
 
 /* Contenedor del texto (lado izquierdo) */

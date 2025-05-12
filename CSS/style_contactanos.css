@@ -17,6 +17,7 @@ body {
     align-items: center;
     margin: 100px 0;
     position: relative;
+    margin-top: 10rem;
   }
   .container-full img{
     position: absolute;
