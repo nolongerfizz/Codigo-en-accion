@@ -22,15 +22,15 @@
     <img src="/assets/transformacion/baseConejoSakura.png" alt="">
   </div>
   <div class="login-form">
-    <form autocomplete="off" class="w-75">
+    <form autocomplete="off" class="w-75" novalidate>
       <div class="mb-3">
         <span class="btn-title w-100 mb-2">Bienvenido</span>    
       </div>    
       <div class="mb-3">
-        <input type="email" class="form-control" placeholder="Correo Electrónico" required>
+        <input type="email" id="correo" class="form-control" placeholder="Correo Electrónico" required>
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control" placeholder="Contraseña" required>        
+        <input type="password" id="contrasena" class="form-control" placeholder="Contraseña" required>        
       </div>
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="termsCheck" required>
@@ -51,5 +51,7 @@
 <div id="footer"></div> 
 <script src="/JS/loader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/JS/login.js"></script>
 </body>
 </html>
