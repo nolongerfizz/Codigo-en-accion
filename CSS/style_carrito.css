@@ -49,7 +49,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    border: solid, red
   }
   
 /* Estilo de cada tarjeta */
