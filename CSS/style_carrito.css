@@ -30,6 +30,7 @@ body {
     margin-right: 30px;
     padding: 0 16px;  
     flex-wrap: wrap;
+    align-items: flex-start;
   }
   
   .carrito-izq {
@@ -48,8 +49,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    border: solid, red
   }
   
+/* Estilo de cada tarjeta */
   .producto-card {
     display: flex;
     align-items: center;
