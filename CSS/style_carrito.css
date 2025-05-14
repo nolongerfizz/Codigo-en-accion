@@ -1,0 +1,197 @@
+/* *{
+  border: solid, red;
+} */
+
+/* Paleta de colores */
+:root {
+    --atelier-blanco-nube: #FCFCFC;
+    --atelier-cian-celeste: #83CDE2;
+    --atelier-rosa-zakura: #EC407A;
+    --atelier-rosa-ternura: #FFB5C2;
+    --atelier-negro-hilo: #000000;
+    --atelier-piel-suave: #FFE9DA;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--atelier-blanco-nube);
+    margin: 0;
+    margin-top: 200px;
+    padding: 0;
+  }
+  
+  .carrito-main {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0 16px;  
+    flex-wrap: wrap;
+  }
+  
+  .carrito-izq {
+    flex: 3 1 0;
+    margin-right: 50px;
+  }
+  
+  .carrito-izq h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+  
+  #carrito-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .producto-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 25px;;
+    padding: 18px 22px;
+    gap: 16px;
+    position: relative; 
+    box-shadow: rgba(10, 10, 10, 0.6) 0px 15px 25px;
+  }
+  
+  .producto-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 25px;
+    background: var(--atelier-blanco-nube);
+  }
+  
+  .producto-card .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    padding-right: 24px;
+  }
+  
+  .producto-card .cerrar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: #111;
+    transition: color 0.2s;
+  }
+  
+  .producto-card .cerrar:hover {
+    color: var(--atelier-rosa-zakura);
+  }
+  
+  .producto-card .nombre {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    text-align: center;
+  }
+  
+  .producto-card .precio {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: 8px;
+    color: var(--atelier-negro-hilo);
+  }
+  
+  .carrito-der {
+    flex: 1 1 280px;
+    margin-left: 50px;
+    width: 30%;
+  }
+  
+  .resumen-card {
+    border-radius: 6px;
+    background: var(--atelier-blanco-nube);
+    padding: 28px 24px 24px 24px;
+    box-shadow: rgba(10, 10, 10, 0.6) 0px 15px 25px;
+    border-radius: 25px;
+  }
+  
+  .resumen-card h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .resumen-linea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .resumen-total {
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 14px;
+  }
+  
+  .codigo-promo {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--atelier-negro-hilo);
+    border-radius: 4px;
+    margin-bottom: 14px;
+    font-size: 1rem;
+  }
+  
+  .btn-pagar {
+    width: 35%;
+    background: var(--atelier-negro-hilo);
+    color: var(--atelier-blanco-nube);
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;          /* Hace que el botón ocupe su propia línea */
+    margin: 0 auto;   
+  }
+  
+  .btn-pagar:hover {
+    background: var(--atelier-rosa-zakura);
+  }
+  
+ @media (max-width: 750px) {
+    .carrito-main {
+        flex-direction: column;
+        gap: 28px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 4vw;
+    }
+    .carrito-izq,
+    .carrito-der {
+        margin: 0 auto;
+        min-width: 0;
+        max-width: 100%;
+    }
+    .carrito-der {
+        margin-top: 24px;
+         margin-top: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 300px;   /* Asegura el ancho mínimo */
+        max-width: 80vw;    /* Que no se pase del viewport */
+        width: 100%;
+    }
+}
+  
