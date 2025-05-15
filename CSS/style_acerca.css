@@ -15,6 +15,7 @@ margin-top: 8rem;
   flex: 1; /* Ocupa la mitad del espacio disponible (o más si es necesario) */
   font-family: 'Quicksand', sans-serif; /* Usa la misma fuente para mantener consistencia */
   color: var(--atelier-negro-hilo);
+  margin-left: 5%;
 }
 
 .intro-text h1{
@@ -35,7 +36,7 @@ margin-right: 50px;
 /* Estilo para la imagen dentro del contenedor */
 .intro-image img {
 max-width: 100%; /* Evita que la imagen sobrepase el ancho del contenedor */
-height: 300px; /* Fija la altura de la imagen */
+height: 400px; /* Fija la altura de la imagen */
 border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable */
 }
 

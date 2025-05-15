@@ -8,7 +8,9 @@ body {
     font-family: 'Quicksand', sans-serif;
     background: var(--atelier-blanco-nube);
     display: flex;
-    flex-direction: column;       
+    flex-direction: column; 
+    max-width: 100%;
+    overflow-x: hidden;      
   }  
   /* CONTENEDOR PRINCIPAL */
   .container-full{
@@ -130,18 +132,39 @@ body {
   }
   
   .muñeco.izquierda {
-    bottom: 0;
+    bottom: -60px;
     left: -90px;
     width: 350px;
     transform: rotate(65deg);
   }
   
   .muñeco.derecha {
-    top: -300px;
-    right: -300px;
-    width: 1000px;
+    top: -160px;
+    right: -90px;
+    width: 350px;
     transform: rotate(240deg);
   }
+  /* Pantallas medianas: tablets */
+@media (max-width: 768px) {
+  .muñeco.izquierda {
+    width: 250px;
+  }
+
+  .muñeco.derecha {
+    width: 250px;
+  }
+}
+
+/* Pantallas pequeñas: móviles */
+@media (max-width: 480px) {
+  .muñeco.izquierda {
+    width: 180px;
+  }
+
+  .muñeco.derecha {
+    width: 180px;
+  }
+}
   
   /* ======================= */
   /* MENSAJES DE VALIDACIÓN */
