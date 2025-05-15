@@ -164,7 +164,7 @@ body {
     padding: 12px 0;
     cursor: pointer;
     transition: background 0.2s;
-    display: block;          /* Hace que el botón ocupe su propia línea */
+    display: block;     /* Hace que el botón ocupe su propia línea */
     margin: 0 auto;   
   }
   
@@ -191,8 +191,8 @@ body {
          margin-top: 24px;
         margin-left: auto;
         margin-right: auto;
-        min-width: 300px;   /* Asegura el ancho mínimo */
-        max-width: 80vw;    /* Que no se pase del viewport */
+        min-width: 300px;  
+        max-width: 80vw;   
         width: 100%;
     }
 }
