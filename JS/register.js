@@ -87,9 +87,13 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
     // Mostrar la alerta de éxito inmediatamente
     Swal.fire({
-        title: 'Registro exitoso',
+        title: '✅ Registro exitoso',
         text: 'Sus datos han sido registrados correctamente.',
-        icon: 'success',
+        imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
+        imageWidth: 200,  // Adjust the size 
+        imageHeight: 300,
+        imageWidth: 100,
+        imageHeight: 100,
         confirmButtonText: 'Aceptar'
     });
 

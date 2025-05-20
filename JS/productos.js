@@ -105,8 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Validar que haya producto y texto
     if (!productoSeleccionado || texto === "") {
       Swal.fire({
-      icon: "warning",
-      title: "Faltan datos",
+      imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+      imageWidth: 200,  // Adjust the size 
+      imageHeight: 300,
+      title: "❌ Faltan datos",
       text: "Por favor selecciona un amigurumi y escribe una descripción.",
       confirmButtonText: "Ok",
       });
@@ -136,8 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!personajeValido) {
       Swal.fire({
-        icon: "error",
-        title: 'Personaje no reconocido',
+        imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+        imageWidth: 200,  // Adjust the size 
+        imageHeight: 300,
+        title: '❌ Personaje no reconocido',
         text: 'Se mantendrá la imagen original.',
         timer: 4000,
         confirmButtonText: 'Entendido',
@@ -173,8 +177,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".btn-submit").addEventListener("click", () => {
     if (!personajeValido) {
       Swal.fire({
-        icon: "error",
-        title: "Falta generar el personaje",
+        imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+        imageWidth: 200,  // Adjust the size 
+        imageHeight: 300,
+        title: "❌ Falta generar el personaje",
         text: "Por favor personaliza el amigurumi antes de añadirlo al pedido.",
         confirmButtonText: "Aceptar",
       });
@@ -188,8 +194,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const precio = precioFinal.textContent;
 
     Swal.fire({
-       icon: 'success',
-       title: 'Pedido añadido',
+       imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
+       imageWidth: 200,  // Adjust the size 
+       imageHeight: 300,
+       title: '✅ Pedido añadido',
        html: `
        <p><strong>Nombre:</strong> ${nombre}</p>
        <p><strong>Tamaño:</strong> ${tamaño}</p>
