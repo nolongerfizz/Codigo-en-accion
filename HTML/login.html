@@ -29,8 +29,11 @@
       <div class="mb-3">
         <input type="email" id="correo" class="form-control" placeholder="Correo Electrónico" required>
       </div>
-      <div class="mb-3">
-        <input type="password" id="contrasena" class="form-control" placeholder="Contraseña" required>        
+      <div class="mb-3 position-relative">
+        <input type="password" id="contrasena" class="form-control" placeholder="Contraseña" required>
+        <button type="button" class="btn btn-link btn-toggle-password position-absolute top-50 end-0 translate-middle-y px-2" tabindex="-1" data-target="contrasena">
+          <i class="fa-solid fa-eye-slash"></i>
+        </button>
       </div>
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="termsCheck" required>

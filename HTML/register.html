@@ -38,14 +38,20 @@
       <div class="mb-3">
         <input type="email" id="correo" class="form-control" placeholder="Correo Electrónico">
       </div>
-      <div class="mb-3">
-        <input type="password" id="contrasena" class="form-control" placeholder="Contraseña">         
-        <small class="text-muted">
-          Debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.
-        </small>
+      <div class="mb-3 position-relative  control">
+        <input type="password" id="contrasena" class="form-control" placeholder="Contraseña">
+        <button type="button" class="btn btn-link btn-toggle-password position-absolute" tabindex="-1" data-target="contrasena">
+          <i class="fa-solid fa-eye-slash"></i>
+        </button>        
       </div>
-      <div class="mb-3">
-        <input type="password" id="confirmar-contrasena" class="form-control" placeholder="Confirmar Contraseña">        
+      <p class="text-muted">
+          Debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.
+      </p>
+      <div class="mb-3 position-relative">
+        <input type="password" id="confirmar-contrasena" class="form-control" placeholder="Confirmar Contraseña">
+        <button type="button" class="btn btn-link btn-toggle-password position-absolute" tabindex="-1" data-target="confirmar-contrasena">
+          <i class="fa-solid fa-eye-slash"></i>
+        </button>
       </div>
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="termsCheck" >
