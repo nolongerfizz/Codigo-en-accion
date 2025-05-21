@@ -2,6 +2,9 @@
  .link_contactanos{
   display: none;
 }
+html, body {
+  overflow-x: hidden;
+}
 body {
     margin: 0;
     padding: 0;
@@ -38,7 +41,7 @@ body {
   }  
   .contact-container h2 {
     font-size: 28px;
-    color: #2d2a32;
+    color: var(--atelier-negro-hilo);
     margin-bottom: 25px;
   }  
   /* ======================= */
@@ -47,7 +50,6 @@ body {
    .input-form, textarea {
     display: block;
     width: 90%;
-    max-width: 100%;
     padding: 14px;
     margin: 0 auto 15px auto;
     border: 2px solid transparent;
@@ -56,14 +58,15 @@ body {
     transition: all 0.3s ease;
     outline: none;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    background: #fff;
+    background: var(--atelier-blanco-nube);
     border: 1px solid #b0afaf;
+    box-sizing: border-box;
   }
 
   input:focus,
   textarea:focus {
-    border-color: #ff9abf;
-    background: #fff8fb;
+    border-color: var(--atelier-rosa-ternura);
+    background: var(--atelier-blanco-nube);
   }
   
   /* ======================= */
@@ -132,37 +135,39 @@ body {
   }
   
   .muñeco.izquierda {
-    bottom: -60px;
-    left: -90px;
+    top: 160px;
+    left: 0;
+    transform: translateX(-30%) rotate(65deg);
     width: 350px;
-    transform: rotate(65deg);
   }
   
   .muñeco.derecha {
     top: -160px;
-    right: -90px;
+    right: 0;
+    transform: translateX(30%) rotate(240deg);
     width: 350px;
-    transform: rotate(240deg);
   }
   /* Pantallas medianas: tablets */
-@media (max-width: 768px) {
+@media (max-width: 880px) {
   .muñeco.izquierda {
-    width: 250px;
+    width: 230px;
+    transform: translateX(-45%) rotate(65deg);
   }
 
   .muñeco.derecha {
     width: 250px;
+    transform: translateX(45%) rotate(240deg);
   }
 }
 
 /* Pantallas pequeñas: móviles */
-@media (max-width: 480px) {
+@media (max-width: 650px) {
   .muñeco.izquierda {
-    width: 180px;
+    display: none;
   }
 
   .muñeco.derecha {
-    width: 180px;
+    display: none;
   }
 }
   
@@ -178,9 +183,9 @@ body {
   }
   
   #form-messages p.success {
-    background-color: #ffe8f0;
-    color: #cc2f72;
-    border: 1px solid #ffb3c9;
+    background-color: var(--atelier-blanco-nube);
+    color: var(--atelier-rosa-zakura);
+    border: 1px solid var(--atelier-rosa-ternura);
     font-weight: 500;
     text-align: center;
     border-radius: 12px;
@@ -192,9 +197,9 @@ body {
   }
   
   #form-messages p.error {
-    background-color: #ffe0e0;
-    color: #a30000;
-    border: 1px solid #ff9a9a;
+    background-color: var(--atelier-blanco-nube);
+    color: var(--atelier-rosa-zakura);
+    border: 1px solid var(--atelier-rosa-ternura);
     border-radius: 12px;
     padding: 12px;
     margin-top: 20px;
@@ -211,7 +216,7 @@ body {
         padding: 30px 20px;
     }
   
-    input, textarea {
+    .input-form, textarea {
         width: 100%;
     }
   
