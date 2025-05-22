@@ -66,14 +66,10 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
   if (usuarioEncontrado) {
     localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
-    showAlert({
-      title: '✅ Bienvenido!',
-      text: `Hola ${usuarioEncontrado.nombre}, acceso exitoso.`,
-      imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png'
-    });
+    
     setTimeout(() => {
-      window.location.href = 'home.html';
-    }, 3000);
+      window.location.href = '../index.html';
+    }, 50);
   } else {
     showAlert({
       title: '❌ Error',
