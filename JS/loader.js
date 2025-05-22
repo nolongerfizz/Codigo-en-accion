@@ -17,15 +17,15 @@ function loadComponent(id, url, callback) {
   }
   
   // Cargar header y luego su script
-  loadComponent("header", "/components/header.html", function () {
+  loadComponent("header", "../components/header.html", function () {
     const script = document.createElement("script");
-    script.src = "/JS/header_nav.js";
+    script.src = "../JS/header_nav.js";
     script.defer = true;
     document.body.appendChild(script);
   });
   
   // Cargar footer
-  loadComponent("footer", "/components/footer.html");
+  loadComponent("footer", "../components/footer.html");
 
   // Hide the loader once the page is fully loaded
   window.addEventListener('load', () => {
