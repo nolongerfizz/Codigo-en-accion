@@ -46,8 +46,8 @@ function updateHeaderForLoggedUser() {
             logoutBtn.href = "#";
             logoutBtn.classList.add("login"); // same style as 'Inicia sesión'
             logoutBtn.innerHTML = `
-            <span>Cerrar sesión</span>
             <i class="fa fa-sign-out-alt"></i>
+            <span>Cerrar sesión</span>
             `;
             logoutBtn.addEventListener("click", () => {
                 localStorage.removeItem("usuarioActivo");

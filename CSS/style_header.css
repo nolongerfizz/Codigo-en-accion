@@ -33,6 +33,9 @@ header {
     display: flex;
     gap: 40px;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   nav a {
@@ -90,20 +93,6 @@ header {
     display: flex;
     gap: 14px;
   }
-  /* .icons i {
-    font-size: 22px;
-    color: var(--atelier-negro-hilo);
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-   */
-  /* .icons i:hover {
-    color: var(--atelier-blanco-nube);
-  }
-
-  .icons span:hover{
-    color: var(--atelier-blanco-nube);
-  } */
   
   /* Botón hamburguesa */
   .nav-responsive {
@@ -193,7 +182,7 @@ header {
     }
 
   }
-  @media (max-width: 480px) {
+  @media (max-width: 550px) {
     .login span,
     .cart span {
       display: none;
