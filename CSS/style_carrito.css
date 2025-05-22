@@ -1,6 +1,3 @@
-/* *{
-  border: solid, red;
-} */
 
 /* Paleta de colores */
 :root {
@@ -22,24 +19,18 @@ body {
   
   .carrito-main {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 100px;
+    margin: 0 auto 100px auto;
     padding: 0 16px;  
     flex-wrap: wrap;
     align-items: flex-start;
-    max-width: 990px;
-    margin-left: 50px;
-    margin-right: auto;
-    width: 100%;
-    gap: 0 40px;
-    border: solid, orange;
+    max-width: 1200px;
+    gap: 40px 24px;
   }
   
   .carrito-izq {
-    flex: 7 1 0;
-    margin-right: 0px;
-    border: solid, rgb(0, 255, 30);
+    flex: 2 1 0;
+    max-width: 750px;
     align-items: center;
     align-content: center;
   }
@@ -125,8 +116,8 @@ body {
   }
   
   .carrito-der {
-    flex: 1 1 280px;
-    margin-left: 40px;
+    flex: 1 1 0;
+    max-width: 400px;
   }
   
   /* tarjeta derecha - resumen del pedido */
@@ -137,7 +128,6 @@ body {
     box-shadow: rgba(10, 10, 10, 0.6) 0px 15px 25px;
     border-radius: 25px;
     max-width: 700px;
-  
   }
   
   .resumen-card h2 {
@@ -191,25 +181,31 @@ body {
     background: var(--atelier-rosa-zakura);
   }
   
- @media (max-width: 990px) {
-    .carrito-main {
-        text-align: center;
-        display: flex;
-        gap: 20px;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0 4vw;
-        align-items: center;
-        margin: auto;
-    }
-    .carrito-izq,
-    .carrito-der {
-        margin: 0 auto;     
-        flex: 1 1 100%;
-        min-width: 100%;
-        max-width: 100%;
-        text-align: center;
-    }
-    
+@media (max-width: 970px) {
+   .carrito-main {
+    flex-direction: column;
+    align-items: center; 
+  }
+  .carrito-izq h2{
+    text-align: center;
+  }
+
+  .carrito-izq,
+  .carrito-der {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .producto-card,
+  .resumen-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .carrito-der {
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
 }
+
   
