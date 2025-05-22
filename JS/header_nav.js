@@ -59,7 +59,7 @@ function updateHeaderForLoggedUser() {
 }
 
 // Cargar el header y activar el botón toggle
-loadComponent("header", "/components/header.html", function () {
+loadComponent("header", "../components/header.html", function () {
     const menuToggle = document.getElementById('menu-toggle');
     const responsiveMenu = document.getElementById('responsive-menu');
 
