@@ -7,7 +7,7 @@ function showAlert({ title = '', text = '', icon = 'info', imageUrl = '', focusE
     imageUrl: imageUrl || undefined,
     imageWidth: 200,
     imageHeight: 300,
-    confirmButtonText: 'Aceptar'
+    confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>'
   }).then(() => {
     if (focusElementId) document.getElementById(focusElementId)?.focus();
   });

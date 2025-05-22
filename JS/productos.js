@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
       imageHeight: 300,
       title: "❌ Faltan datos",
       text: "Por favor selecciona un amigurumi y escribe una descripción.",
-      confirmButtonText: "Ok",
+      confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>',
       });
       return;
     }
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title: '❌ Personaje no reconocido',
         text: 'Se mantendrá la imagen original.',
         timer: 4000,
-        confirmButtonText: 'Entendido',
+        confirmButtonText: '<span class="custom-swal-btn">Entendido</span>',
       });
       modalImg.src = imagenOriginal;
     }
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         imageHeight: 300,
         title: "❌ Falta generar el personaje",
         text: "Por favor personaliza el amigurumi antes de añadirlo al pedido.",
-        confirmButtonText: "Aceptar",
+        confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>',
       });
       return;
     }
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
        <p><strong>Precio:</strong> ${precio}</p>
        <p><strong>Descripción:</strong> ${descripcion}</p>
        `,
-       confirmButtonText: 'Aceptar',
+       confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>',
     });
   });
 });

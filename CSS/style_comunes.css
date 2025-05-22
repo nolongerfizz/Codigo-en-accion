@@ -44,3 +44,24 @@
         transform: rotate(360deg);
     }
 }
+
+/* Personalización global del botón de SweetAlert2 */
+.swal2-confirm, .custom-swal-btn {
+  color: #fff !important;
+  background: #000 !important;
+  border-radius: 8px !important;
+  font-weight: bold !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  transition: background 0.2s !important;
+  border: none !important;
+  outline: none !important;
+  display: inline-block !important; 
+  text-align: center !important;
+  margin: 0 auto !important;
+  /* Elimina el padding forzado para usar el de SweetAlert2 */
+}
+.swal2-confirm:hover, .custom-swal-btn:hover, .swal2-confirm:hover *, .custom-swal-btn:hover * {
+  background: #EC407A !important;
+  color: #fff !important;
+}
