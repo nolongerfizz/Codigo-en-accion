@@ -24,22 +24,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 100px;
     padding: 0 16px;  
     flex-wrap: wrap;
     align-items: flex-start;
     max-width: 990px;
-    margin-left: 50px;
-    margin-right: auto;
+    margin: auto;
     width: 100%;
     gap: 0 40px;
-    border: solid, orange;
+    padding-bottom: 100px;
+    top: 500px;
   }
   
   .carrito-izq {
     flex: 7 1 0;
     margin-right: 0px;
-    border: solid, rgb(0, 255, 30);
     align-items: center;
     align-content: center;
   }
