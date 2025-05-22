@@ -1,91 +1,94 @@
-// Función para mostrar alertas con SweetAlert
-function showAlert(title, text, icon) {
-    Swal.fire({
-        title,
-        text,
-        icon,
-        confirmButtonText: 'Aceptar'
-    });
+// === ✅ ALERTA ESTANDAR CON SWEETALERT === //
+function showAlert({ title = '', text = '', icon = 'info', imageUrl = '', focusElementId = '' }) {
+  Swal.fire({
+    title,
+    text,
+    icon: imageUrl ? undefined : icon,
+    imageUrl: imageUrl || undefined,
+    imageWidth: 200,
+    imageHeight: 300,
+    confirmButtonText: 'Aceptar'
+  }).then(() => {
+    if (focusElementId) document.getElementById(focusElementId).focus();
+  });
 }
 
-// Capturar el evento submit del formulario
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita recarga
+// === 🔐 FUNCION HASH FALSA (DEMO SOLO PARA LOCALSTORAGE) === //
+function fakeHash(password) {
+  // ¡Advertencia! Esto NO es seguro para producción real.
+  return btoa(password); // Base64 como simulación
+}
 
-    const correo = document.getElementById('correo').value.trim();
-    const contrasena = document.getElementById('contrasena').value.trim();
+// === 🔍 VALIDACIÓN DE FORMULARIO DE LOGIN === //
+function validateLogin(correo, contrasena) {
+  const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const regexContrasena = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;
 
-    // Validación de campos vacíos
-    // Reemplazar validación del correo con SweetAlert
-    if (!correo || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'Por favor, ingrese un correo electrónico válido.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
+  if (!correo || !regexCorreo.test(correo)) {
+    return { valid: false, msg: 'Por favor, ingrese un correo electrónico válido.', field: 'correo' };
+  }
 
-    if (!contrasena || !/(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}/.test(contrasena)) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'La contraseña debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-            });
-        return;
-    }
+  if (!contrasena || !regexContrasena.test(contrasena)) {
+    return {
+      valid: false,
+      msg: 'La contraseña debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.',
+      field: 'contrasena'
+    };
+  }
 
-    // Deshabilitar validación nativa del correo electrónico
-    const correoInput = document.getElementById('correo');
-    correoInput.setAttribute('novalidate', 'true');
+  return { valid: true };
+}
 
-    // Obtener usuarios registrados del localStorage
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+// === 🚀 EVENTO SUBMIT === //
+document.querySelector('form').addEventListener('submit', function (event) {
+  event.preventDefault();
 
-    // Buscar usuario que coincida con correo y contraseña
-    const usuarioEncontrado = usuarios.find(user => user.correo === correo && user.contrasena === contrasena);
+  const correo = document.getElementById('correo').value.trim();
+  const contrasena = document.getElementById('contrasena').value.trim();
+  const validacion = validateLogin(correo, contrasena);
 
-    if (usuarioEncontrado) {
-        // Guardar usuario activo en localStorage
-        localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
+  if (!validacion.valid) {
+    return showAlert({
+      title: '❌ Error',
+      text: validacion.msg,
+      icon: 'error',
+      imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+      focusElementId: validacion.field
+    });
+  }
 
-        // Mostrar alerta de éxito y redirigir al aceptar
-        Swal.fire({
-            title: '✅ Bienvenido!',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        }).then(() => {
-            window.location.href = 'home.html';
-        });
-    } else {
-        // Datos inválidos
-        showAlert('Error', 'Correo o contraseña incorrectos.', 'error');
-    }
+  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  const contrasenaHasheada = fakeHash(contrasena); // Simula hash como se guardó en el register
+
+  const usuarioEncontrado = usuarios.find(user =>
+    user.correo === correo && user.contrasena === contrasenaHasheada
+  );
+
+  if (usuarioEncontrado) {
+    localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
+    
+    setTimeout(() => {
+      window.location.href = '../index.html';
+    }, 50);
+  } else {
+    showAlert({
+      title: '❌ Error',
+      text: 'Correo o contraseña incorrectos.',
+      icon: 'error',
+      imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png'
+    });
+  }
 });
 
-// Mostrar/ocultar contraseña
-const toggleBtns = document.querySelectorAll('.btn-toggle-password');
-toggleBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        const targetId = btn.getAttribute('data-target');
-        const input = document.getElementById(targetId);
-        const icon = btn.querySelector('i');
-        if (input.type === 'password') {
-            input.type = 'text';
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye');
-        } else {
-            input.type = 'password';
-            icon.classList.remove('fa-eye');
-            icon.classList.add('fa-eye-slash');
-        }
-    });
+// === 👁️ MOSTRAR/OCULTAR CONTRASEÑA === //
+document.querySelectorAll('.btn-toggle-password').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const input = document.getElementById(btn.getAttribute('data-target'));
+    const icon = btn.querySelector('i');
+
+    const isPassword = input.type === 'password';
+    input.type = isPassword ? 'text' : 'password';
+    icon.classList.toggle('fa-eye');
+    icon.classList.toggle('fa-eye-slash');
+  });
 });

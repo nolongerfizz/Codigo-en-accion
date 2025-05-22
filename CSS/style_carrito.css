@@ -20,17 +20,20 @@ body {
   .carrito-main {
     display: flex;
     justify-content: center;
-    margin: 0 auto 100px auto;
     padding: 0 16px;  
     flex-wrap: wrap;
     align-items: flex-start;
-    max-width: 1200px;
-    gap: 40px 24px;
+    max-width: 990px;
+    margin: auto;
+    width: 100%;
+    gap: 0 40px;
+    padding-bottom: 100px;
+    top: 500px;
   }
   
   .carrito-izq {
-    flex: 2 1 0;
-    max-width: 750px;
+    flex: 7 1 0;
+    margin-right: 0px;
     align-items: center;
     align-content: center;
   }
