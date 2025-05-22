@@ -1,0 +1,302 @@
+/* SECCION INTRO  */
+
+/* Contenedor principal de la sección de introducción */
+.intro-content {
+display: flex; /* Usa flexbox para alinear elementos en una fila */
+align-items: center; /* Centra los elementos verticalmente dentro del contenedor */
+justify-content: space-between; /* Deja espacio entre los elementos (texto a la izquierda, imagen a la derecha) */
+gap: 2rem; /* Espacio entre los elementos hijos (texto e imagen) */
+padding: 1rem 2rem; /* Espacio interno alrededor del contenido */
+margin-top: 8rem;
+}
+
+/* Contenedor del texto (lado izquierdo) */
+.intro-text {
+  flex: 1; /* Ocupa la mitad del espacio disponible (o más si es necesario) */
+  font-family: 'Quicksand', sans-serif; /* Usa la misma fuente para mantener consistencia */
+  color: var(--atelier-negro-hilo);
+  margin-left: 5%;
+}
+
+.intro-text h1{
+  font-size: 44px;
+}
+.intro-text p{
+  margin-top: 5%;
+  font-size: 20px;
+}
+
+/* Contenedor de la imagen (lado derecho) */
+.intro-image {
+flex: 1; /* Ocupa el mismo espacio que el texto */
+text-align: right;/* Alinea la imagen a la derecha del contenedor */
+margin-right: 50px; 
+}
+
+/* Estilo para la imagen dentro del contenedor */
+.intro-image img {
+max-width: 100%; /* Evita que la imagen sobrepase el ancho del contenedor */
+height: 400px; /* Fija la altura de la imagen */
+border-radius: 1rem; /* Bordes redondeados para un estilo más suave y amigable */
+}
+
+/* SECCIÓN QUIENES SOMOS */
+/* Sección general */
+#quienes-somos {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--atelier-rosa-ternura);
+  padding: 5%;
+  margin: 0 auto;
+}
+
+/* Título principal */
+#titulo-quienes {
+  text-align: center;
+  font-size: 40px;
+  color: var(--atelier-negro-hilo);
+  margin-bottom: 30px;
+}
+
+/* Párrafo introductorio */
+.info-quienes {
+  text-align: justify;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--atelier-negro-hilo);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Contenedor de tarjetas */
+.contenedor-card-quienes {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Estilo de cada tarjeta */
+.card-quienes {
+  background-color: var(--atelier-blanco-nube);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  padding: 24px;
+  max-width: 400px;
+  min-width: 250px;
+  flex: 1 1 300px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card-quienes:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Título dentro de la tarjeta */
+.card-quienes h5 {
+  color: var(--atelier-negro-hilo);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Texto dentro de la tarjeta */
+.card-quienes p {
+  color: var(--atelier-negro-hilo);
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Responsive: Tablets */
+@media (max-width: 768px) {
+  #quienes-somos {
+    padding: 30px 40px;
+  }
+
+  #titulo-quienes {
+    font-size: 28px;
+  }
+
+  .info-quienes {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .contenedor-card-quienes {
+    gap: 30px;
+  }
+}
+
+/* Responsive: Móviles */
+@media (max-width: 480px) {
+  #quienes-somos {
+    padding: 20px;
+  }
+
+  #titulo-quienes {
+    font-size: 24px;
+  }
+
+  .info-quienes {
+    font-size: 15px;
+  }
+
+  .card-quienes h5 {
+    font-size: 18px;
+  }
+
+  .card-quienes p {
+    font-size: 14px;
+  }
+}
+
+/* SECCIÓN CONOCENOS */
+#equipo {
+    padding: 2rem 1rem;
+    background-color: var(--atelier-blanco-nube);
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  
+  #equipo h2 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color: var(--atelier-negro-hilo);
+  }
+  
+  .equipo-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* Tarjeta del equipo */
+  .card-conocenos{
+    background-color: var(--atelier-blanco-nube);
+    border-radius: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    width: 320px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: justify;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-conocenos:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-conocenos img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--atelier-negro-hilo);
+    margin-bottom: 1rem;
+  }
+  
+  .card-conocenos h3 {
+    margin: 0.5rem 0 0.5rem;
+    font-weight: 600;
+    color: var(--atelier-negro-hilo);
+  }
+  
+  .card-conocenos p {
+    font-size: 0.95rem;
+    color: var(--atelier-negro-hilo);
+    flex-grow: 1;
+  }
+  
+  /* --- RESPONSIVE --- */  
+  @media (max-width: 1440px) {
+    .equipo-contenedor {
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 750px) {
+    .intro-image{
+      margin-right: 5px;
+    }
+    .intro-image img {
+      max-width: 100%; 
+      height: 280px; 
+    }
+    .intro-text h1{
+      font-size: 36px;
+    }
+    .intro-text p{
+      font-size: 18px;
+    }
+
+    #equipo h2 {
+      font-size: 1.8rem;
+    }
+  
+    .card-conocenos {
+      width: 90%;
+      max-width: 300px;
+    }
+  
+    .card-conocenos img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  @media (max-width: 480px) {
+    .intro-image{
+      margin-right: 5px;
+    }
+    .intro-image img {
+      max-width: 100%; 
+      height: 250px; 
+    }
+    .intro-text h1{
+      font-size: 28px;
+    }
+    .intro-text p{
+      font-size: 15px;
+    }
+    .card-text p{
+      font-size: 13px;
+    }
+
+  }
+  
+  @media (max-width: 375px) {
+    .intro-image{
+      margin-right: 5px;
+    }
+    .intro-image img {
+      max-width: 100%; 
+      height: 200px; 
+      border-radius: 1rem; 
+    }
+    #equipo {
+      padding: 1.5rem 1rem;
+    }
+  
+    #equipo h2 {
+      font-size: 1.5rem;
+    }
+  
+    .card-conocenos img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .card-conocenos p {
+      font-size: 0.85rem;
+    }
+  }
+

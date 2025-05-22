@@ -1,0 +1,248 @@
+ /* Ocultar link contactanos en el nav */
+ .link_contactanos{
+  display: none;
+}
+html, body {
+  overflow-x: hidden;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: var(--atelier-blanco-nube);
+    display: flex;
+    flex-direction: column; 
+    max-width: 100%;
+    overflow-x: hidden;      
+  }  
+  /* CONTENEDOR PRINCIPAL */
+  .container-full{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+    position: relative;
+    margin-top: 10rem;
+  }
+  .container-full img{
+    position: absolute;
+  }
+  .contact-container {
+    background: var(--atelier-blanco-nube); 
+    padding: 40px 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.60);
+    width: 500px;
+    max-width: 90%;    
+    text-align: center;
+    z-index: 1;
+    animation: fadeIn 1s ease-in;
+    
+  }  
+  .contact-container h2 {
+    font-size: 28px;
+    color: var(--atelier-negro-hilo);
+    margin-bottom: 25px;
+  }  
+  /* ======================= */
+  /* CAMPOS DEL FORMULARIO */
+  /* ======================= */
+   .input-form, textarea {
+    display: block;
+    width: 90%;
+    padding: 14px;
+    margin: 0 auto 15px auto;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background: var(--atelier-blanco-nube);
+    border: 1px solid #b0afaf;
+    box-sizing: border-box;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: var(--atelier-rosa-ternura);
+    background: var(--atelier-blanco-nube);
+  }
+  
+  /* ======================= */
+  /* ÁREA DE TEXTO */
+  /* ======================= */
+  textarea {
+    resize: none;
+    height: 120px;
+  }
+  
+  /* ======================= */
+  /* CHECKBOX */
+  /* ======================= */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding-left: 5%;
+  }  
+  .checkbox-container input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    cursor: pointer;
+  }  
+  .checkbox-container label {
+    font-size: 14px;
+    color: #2d2a32;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+  }
+  
+  /* ======================= */
+  /* BOTÓN DE ENVÍO */
+  /* ======================= */
+  .button-submit {
+    background:var(--atelier-negro-hilo);
+    color: var(--atelier-blanco-nube);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 180px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .button-submit:hover {
+    background:var(--atelier-rosa-zakura);
+    transform: translateY(-3px);
+  }
+  
+  /* ======================= */
+  /* MUÑECOS DECORATIVOS */
+  /* ======================= */
+  .muñeco {
+    position: fixed;
+    z-index: 0;
+  }
+  
+  .muñeco.izquierda {
+    top: 160px;
+    left: 0;
+    transform: translateX(-30%) rotate(65deg);
+    width: 350px;
+  }
+  
+  .muñeco.derecha {
+    top: -160px;
+    right: 0;
+    transform: translateX(30%) rotate(240deg);
+    width: 350px;
+  }
+  /* Pantallas medianas: tablets */
+@media (max-width: 880px) {
+  .muñeco.izquierda {
+    width: 230px;
+    transform: translateX(-45%) rotate(65deg);
+  }
+
+  .muñeco.derecha {
+    width: 250px;
+    transform: translateX(45%) rotate(240deg);
+  }
+}
+
+/* Pantallas pequeñas: móviles */
+@media (max-width: 650px) {
+  .muñeco.izquierda {
+    display: none;
+  }
+
+  .muñeco.derecha {
+    display: none;
+  }
+}
+  
+  /* ======================= */
+  /* MENSAJES DE VALIDACIÓN */
+  /* ======================= */
+  #form-messages p {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  #form-messages p.success {
+    background-color: var(--atelier-blanco-nube);
+    color: var(--atelier-rosa-zakura);
+    border: 1px solid var(--atelier-rosa-ternura);
+    font-weight: 500;
+    text-align: center;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  #form-messages p.error {
+    background-color: var(--atelier-blanco-nube);
+    color: var(--atelier-rosa-zakura);
+    border: 1px solid var(--atelier-rosa-ternura);
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-in-out;
+  } 
+  
+  /* ======================= */
+  /* RESPONSIVE */
+  /* ======================= */
+  @media screen and (max-width: 600px) {
+    .contact-container {
+        padding: 30px 20px;
+    }
+  
+    .input-form, textarea {
+        width: 100%;
+    }
+  
+    .checkbox-container {
+      flex-direction: row;
+      align-items: center;
+      padding-left: 5%;
+    }
+    
+  
+    .button-submit {
+        width: 100%;
+    }
+  }
+  
+  /* ======================= */
+  /* ANIMACIONES */
+  /* ======================= */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
