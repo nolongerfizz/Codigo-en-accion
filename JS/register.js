@@ -1,173 +1,161 @@
-// Agregar SweetAlert para alertas con mejor diseño
-function showAlert(title, text, icon, focusElementId) {
-    Swal.fire({
-        title: title,
-        text: text,
-        icon: icon,
-        confirmButtonText: 'Aceptar'
-    }).then(() => {
-        if (focusElementId) {
-            document.getElementById(focusElementId).focus();
-        }
-    });
+// === ✅ ALERTAS CON SWEETALERT2 === //
+function showAlert({ title = '', text = '', icon = 'info', imageUrl = '', focusElementId = '' }) {
+  Swal.fire({
+    title,
+    text,
+    icon: imageUrl ? undefined : icon,
+    imageUrl: imageUrl || undefined,
+    imageWidth: 200,
+    imageHeight: 300,
+    confirmButtonText: 'Aceptar'
+  }).then(() => {
+    if (focusElementId) document.getElementById(focusElementId)?.focus();
+  });
 }
 
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita el envío del formulario
+// === 🔐 HASH SIMULADO (NO SEGURO, SOLO DEMO) === //
+function fakeHash(password) {
+  return btoa(password);
+}
 
-    // Obtener los valores de los campos
-    const nombre = document.getElementById('nombre').value.trim();
-    const apellidos = document.getElementById('apellidos').value.trim();
-    const telefono = document.getElementById('telefono').value.trim();
-    const correo = document.getElementById('correo').value.trim();
-    const contrasena = document.getElementById('contrasena').value.trim();
-    const termsCheck = document.getElementById('termsCheck').checked;
+// === ✅ VALIDACIÓN === //
+function validateForm(fields) {
+  const { nombre, apellidos, telefono, correo, contrasena, confirmarContrasena, termsCheck } = fields;
 
-    // Validaciones personalizadas
-    if (!nombre) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'Por favor, ingrese su nombre.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
+  const regexTelefono = /^\d{10}$/;
+  const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const regexContrasena = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;
 
-    if (!apellidos) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'Por favor, ingrese sus apellidos.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
+  if (!nombre) return { valid: false, msg: 'Por favor, ingrese su nombre.', field: 'nombre' };
+  if (!apellidos) return { valid: false, msg: 'Por favor, ingrese sus apellidos.', field: 'apellidos' };
+  if (!telefono || !regexTelefono.test(telefono)) return { valid: false, msg: 'Ingrese un teléfono válido de 10 dígitos.', field: 'telefono' };
+  if (!correo || !regexCorreo.test(correo)) return { valid: false, msg: 'Ingrese un correo electrónico válido.', field: 'correo' };
+  if (!contrasena || !regexContrasena.test(contrasena)) return { valid: false, msg: 'La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial.', field: 'contrasena' };
+  if (contrasena !== confirmarContrasena) return { valid: false, msg: 'Las contraseñas no coinciden.', field: 'confirmar-contrasena' };
+  if (!termsCheck) return { valid: false, msg: 'Debe aceptar los términos y condiciones.', field: null };
 
-    // Actualizar validación del teléfono para que sean exactamente 10 dígitos
-    if (!telefono || !/^[0-9]{10}$/.test(telefono)) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'Por favor, ingrese un número de teléfono válido de 10 dígitos.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
+  return { valid: true };
+}
 
-    // Deshabilitar validación nativa del correo electrónico
-    const correoInput = document.getElementById('correo');
-    correoInput.setAttribute('novalidate', 'true');
+// === 🚀 FORMULARIO === //
+document.querySelector('form').addEventListener('submit', function (event) {
+  event.preventDefault();
 
-    // Reemplazar validación del correo con SweetAlert
-    if (!correo || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'Por favor, ingrese un correo electrónico válido.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
+  const fields = {
+    nombre: document.getElementById('nombre').value.trim(),
+    apellidos: document.getElementById('apellidos').value.trim(),
+    telefono: document.getElementById('telefono').value.trim(),
+    correo: document.getElementById('correo').value.trim(),
+    contrasena: document.getElementById('contrasena').value.trim(),
+    confirmarContrasena: document.getElementById('confirmar-contrasena').value.trim(),
+    termsCheck: document.getElementById('termsCheck').checked
+  };
 
-    if (!contrasena || !/(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}/.test(contrasena)) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'La contraseña debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
-
-    // Validar que la confirmación de contraseña coincida con la contraseña
-    const confirmarContrasena = document.getElementById('confirmar-contrasena').value.trim();
-    if (contrasena !== confirmarContrasena) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'Las contraseñas no coinciden.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
-
-    if (!termsCheck) {
-        Swal.fire({
-            title: '❌ Error',
-            text: 'Debe aceptar los términos y condiciones.',
-            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
-            imageWidth: 200,  // Adjust the size 
-            imageHeight: 300,
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
-
-    // Crear objeto JSON con los datos del usuario
-    const usuario = {
-        nombre,
-        apellidos,
-        telefono,
-        correo,
-        contrasena
-    };
-
-    // Obtener usuarios existentes de localStorage o inicializar un array vacío
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-    // Agregar el nuevo usuario al array
-    usuarios.push(usuario);
-
-    // Guardar el array actualizado en localStorage
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-    // Mostrar la alerta de éxito inmediatamente
-    Swal.fire({
-        title: '✅ Registro exitoso',
-        text: 'Sus datos han sido registrados correctamente.',
-        imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
-        imageWidth: 200,  // Adjust the size 
-        imageHeight: 300,
-        confirmButtonText: 'Aceptar'
+  const validation = validateForm(fields);
+  if (!validation.valid) {
+    return showAlert({
+      title: '❌ Error',
+      text: validation.msg,
+      icon: 'error',
+      imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+      focusElementId: validation.field
     });
+  }
 
-    // Redirigir a nuestra página de iniciar sesión con un retraso de 3000 ms
-    setTimeout(() => {
-        window.location.href = 'login.html';
-    }, 3000);
+  const usuario = {
+    nombre: fields.nombre,
+    apellidos: fields.apellidos,
+    telefono: fields.telefono,
+    correo: fields.correo,
+    contrasena: fakeHash(fields.contrasena)
+  };
 
-    // Resetear el formulario después de un registro exitoso
-    document.querySelector('form').reset();
+  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  const correoExistente = usuarios.find(u => u.correo === usuario.correo);
+
+  if (correoExistente) {
+    return showAlert({
+      title: '❌ Error',
+      text: 'Este correo ya está registrado.',
+      icon: 'error',
+      imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png'
+    });
+  }
+
+  usuarios.push(usuario);
+  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+  showAlert({
+    title: '✅ Registro exitoso',
+    text: 'Sus datos han sido registrados correctamente.',
+    imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png'
+  });
+
+  setTimeout(() => {
+    window.location.href = 'login.html';
+  }, 3000);
+
+  document.querySelector('form').reset();
 });
 
-// Mostrar/ocultar contraseña
-const toggleBtns = document.querySelectorAll('.btn-toggle-password');
-toggleBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        const targetId = btn.getAttribute('data-target');
-        const input = document.getElementById(targetId);
-        const icon = btn.querySelector('i');
-        if (input.type === 'password') {
-            input.type = 'text';
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye');
-        } else {
-            input.type = 'password';
-            icon.classList.remove('fa-eye');
-            icon.classList.add('fa-eye-slash');
-        }
-    });
+// === 👁️ MOSTRAR/OCULTAR CONTRASEÑA === //
+document.querySelectorAll('.btn-toggle-password').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const input = document.getElementById(btn.getAttribute('data-target'));
+    const icon = btn.querySelector('i');
+    const isPassword = input.type === 'password';
+
+    input.type = isPassword ? 'text' : 'password';
+    icon.classList.toggle('fa-eye');
+    icon.classList.toggle('fa-eye-slash');
+  });
 });
+
+// === 👤 GOOGLE SIGN-IN === //
+window.onload = function () {
+  google.accounts.id.initialize({
+    client_id: '947069495147-elj5eqr5nqal4h25r470jdoa8qih0g35.apps.googleusercontent.com',
+    callback: handleCredentialResponse
+  });
+
+  google.accounts.id.renderButton(
+    document.getElementById("google-signin-btn"),
+    {
+      theme: "outline",
+      size: window.innerWidth < 480 ? "medium" : "large",
+      text: "signin_with",
+      shape: "rectangular",
+      width: "100%"
+    }
+  );
+};
+
+function handleCredentialResponse(response) {
+  const decoded = jwt_decode(response.credential);
+
+  const nombre = decoded.given_name || '';
+  const apellidos = decoded.family_name || '';
+  const correo = decoded.email || '';
+  const contrasena = fakeHash('Google_' + Math.random().toString(36).slice(-8));
+  const telefono = '0000000000';
+
+  const usuario = { nombre, apellidos, correo, contrasena, telefono };
+  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+  const yaExiste = usuarios.some(u => u.correo === correo);
+  if (!yaExiste) usuarios.push(usuario);
+
+  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  localStorage.setItem('usuarioActivo', JSON.stringify(usuario));
+
+  Swal.fire({
+    title: '✅ Inicio de sesión exitoso',
+    text: `Bienvenido/a ${nombre}`,
+    imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
+    imageWidth: 200,
+    imageHeight: 300,
+    confirmButtonText: 'Aceptar'
+  }).then(() => {
+    window.location.href = 'home.html';
+  });
+}
