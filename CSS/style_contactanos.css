@@ -65,8 +65,13 @@ body {
 
   input:focus,
   textarea:focus {
-    border-color: var(--atelier-rosa-ternura);
-    background: var(--atelier-blanco-nube);
+    color: var(--atelier-negro-hilo);
+    background-color: var(--atelier-blanco-nube);
+    border-color: #86b7fe; /* azul de bootstrap */
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25); /*genera un halo azul */
+    /* border-color: var(--atelier-rosa-ternura);
+    background: var(--atelier-blanco-nube); */
   }
   
   /* ======================= */
@@ -80,14 +85,14 @@ body {
   /* ======================= */
   /* CHECKBOX */
   /* ======================= */
-  .checkbox-container {
+  .form-check {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 25px;
     padding-left: 5%;
   }  
-  .checkbox-container input[type="checkbox"] {
+  .form-check input[type="checkbox"] {
     width: 18px;
     height: 18px;
     margin: 0;
@@ -95,9 +100,9 @@ body {
     vertical-align: middle;
     cursor: pointer;
   }  
-  .checkbox-container label {
-    font-size: 14px;
-    color: #2d2a32;
+  .form-check label {
+    font-size: 16px;
+    color: var(--atelier-negro-hilo);
     cursor: pointer;
     user-select: none;
     line-height: 1;
