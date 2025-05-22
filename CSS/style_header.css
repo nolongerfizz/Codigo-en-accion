@@ -52,30 +52,58 @@ header {
     display: none;
   }
   
-  /* Icono login */
-
-  .login{
+  .right-group {
     display: flex;
-    gap:10px;
+    align-items: center;
+    gap: 16px;
+  }
+  /* Icono login y carrito*/
+
+  .login, .cart {
+    display: flex;
+    /* gap:10px; */
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
     color: var(--atelier-negro-hilo);
     font-weight: bold;
+    transition: color 0.3s;
   }
+
+  .login i,
+  .cart i {
+    font-size: 22px;
+    transition: color 0.3s;
+  }
+  .login:hover,
+  .cart:hover {
+    color: var(--atelier-blanco-nube);
+  }
+
+ .login span,
+ .cart span {
+   font-size: 14px;
+   margin-top: 4px;
+ }
 
   .icons{
     display: flex;
-    gap: 10px;
+    gap: 14px;
   }
-  .icons i {
+  /* .icons i {
     font-size: 22px;
     color: var(--atelier-negro-hilo);
     cursor: pointer;
     transition: color 0.3s;
   }
-  
-  .icons i:hover {
+   */
+  /* .icons i:hover {
     color: var(--atelier-blanco-nube);
   }
+
+  .icons span:hover{
+    color: var(--atelier-blanco-nube);
+  } */
   
   /* Botón hamburguesa */
   .nav-responsive {
@@ -86,6 +114,10 @@ header {
   .nav-responsive i {
     font-size: 28px;
     color: var(--atelier-negro-hilo);
+  }
+
+  .nav-responsive i:hover{
+    color: var(--atelier-blanco-nube);
   }
 
     /* Animación del menú */
@@ -140,19 +172,32 @@ header {
     color: var(--atelier-rosa-ternura);
   }  
   /* Responsivo */
-  @media (max-width: 768px) {
+  @media (max-width: 940px) {
     .nav-group {
       display: none;
     }
   
     .icons {
-      display: none;
-    }
+    display: flex;
+  }
   
     .nav-responsive {
       display: block;
     }
    
+  }
+  @media (max-width: 760px) {
+    .login span,
+    .cart span {
+      font-size: 12px;
+    }
+
+  }
+  @media (max-width: 480px) {
+    .login span,
+    .cart span {
+      display: none;
+    }
   }
   
   /* Extra pequeño */

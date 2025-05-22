@@ -1,4 +1,4 @@
- /*Ocultar iniciar sesión en el nav  */
+/*Ocultar iniciar sesión en el nav  */
   .login{
     display: none;    
   } 
@@ -73,6 +73,10 @@
   .login-link {
     text-align: center;
     margin-top: 1rem;
+  }
+
+  .login-form .btn-toggle-password i {
+    color: var(--atelier-negro-hilo) 
   }
   
   /* Media Query para pantallas pequeñas */

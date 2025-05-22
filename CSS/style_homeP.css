@@ -199,7 +199,25 @@
 }
 
 /* Media query para responsive */
-@media (max-width: 768px) {
+@media (max-width: 1180px){
+    .card-amigurumi {
+        max-width: 250px;
+    }
+    .flecha i {
+        font-size: 32px;
+    }
+}
+@media (max-width: 940px){
+    .card-amigurumi {
+        max-width: 200px;
+    }
+    .flecha i {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 800px) {
     .hero {
         flex-direction: column;
         align-items: center;
@@ -236,22 +254,20 @@
         align-items: center;
     }
 
-    .card-amigurumi {
-        width: 90%;
-    }
-
     .pasos-personalizacion {
         flex-direction: column;
         align-items: center;
     }
-
-    .card-amigurumi {
-        width: 90%;
-    }
-
     .flecha i {
         transform: rotate(90deg);/* Rota la flecha a dirección hacia abajo */
         margin: 10px 0;
+    }
+    .card-amigurumi{
+        max-width: 280px;
+    }
+    .secuencia-amigurumi1{
+        border-bottom: 1px groove var(--atelier-negro-hilo);
+        padding-bottom: 40px;
     }
 }
 
