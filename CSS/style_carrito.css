@@ -19,21 +19,21 @@ body {
   
   .carrito-main {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0 16px;  
     flex-wrap: wrap;
     align-items: flex-start;
-    max-width: 990px;
-    margin: auto;
-    width: 100%;
-    gap: 0 40px;
-    padding-bottom: 100px;
-    top: 500px;
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    gap: 30px;
+    padding: 20px;
   }
   
   .carrito-izq {
-    flex: 7 1 0;
+    flex: 1 1 60%;
     margin-right: 0px;
+    max-width: 700px; 
+    min-width: 300px;
     align-items: center;
     align-content: center;
   }
@@ -61,8 +61,8 @@ body {
     gap: 16px;
     position: relative; 
     box-shadow: rgba(10, 10, 10, 0.6) 0px 15px 25px;
-    max-width: 700px;
-    
+    max-width: 100%;
+    width: 100%;
   }
 
   
@@ -119,8 +119,9 @@ body {
   }
   
   .carrito-der {
-    flex: 1 1 0;
-    max-width: 400px;
+    flex: 0 1 35%;
+    max-width: 700px;
+    min-width: 280px;
   }
   
   /* tarjeta derecha - resumen del pedido */
@@ -130,7 +131,7 @@ body {
     padding: 28px 24px 24px 24px;
     box-shadow: rgba(10, 10, 10, 0.6) 0px 15px 25px;
     border-radius: 25px;
-    max-width: 700px;
+    width: 100%;
   }
   
   .resumen-card h2 {
@@ -196,7 +197,6 @@ body {
   .carrito-izq,
   .carrito-der {
     width: 100%;
-    max-width: 100%;
   }
 
   .producto-card,
@@ -208,6 +208,48 @@ body {
   .carrito-der {
     margin-top: 40px;
     margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 650px) {
+  .carrito-izq h2 {
+    font-size: 1.1rem;
+  }
+  .producto-card .nombre,
+  .producto-card .precio {
+    font-size: 0.9rem;
+  }
+  .tamaño-carrito{
+    font-size: 0.9rem;
+  }
+  .resumen-card h2 {
+    font-size: 1.1rem;
+  }
+  .resumen-linea {
+    font-size: 0.9rem;
+  }
+  .codigo-promo,
+  .btn-pagar {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 550px) {
+  .carrito-izq h2 {
+    font-size: 1rem;
+  }
+  .producto-card .nombre,
+  .producto-card .precio {
+    font-size: 0.9rem;
+  }
+  .resumen-card h2 {
+    font-size: 1rem;
+  }
+  .resumen-linea {
+    font-size: 0.85rem;
+  }
+  .codigo-promo,
+  .btn-pagar {
+    font-size: 0.85rem;
   }
 }
 
