@@ -18,7 +18,7 @@ function handleCredentialResponse(response) {
 
   localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
 
-  // ✅ Redirigir automáticamente al home
+  // Redirigir automáticamente al home
   window.location.href = "../index.html";
 }
 
