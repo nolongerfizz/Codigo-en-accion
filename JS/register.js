@@ -152,3 +152,22 @@ document.querySelector('form').addEventListener('submit', function(event) {
     // Resetear el formulario después de un registro exitoso
     document.querySelector('form').reset();
 });
+
+// Mostrar/ocultar contraseña
+const toggleBtns = document.querySelectorAll('.btn-toggle-password');
+toggleBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        const targetId = btn.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        const icon = btn.querySelector('i');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        } else {
+            input.type = 'password';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        }
+    });
+});
