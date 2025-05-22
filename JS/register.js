@@ -25,18 +25,39 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
     // Validaciones personalizadas
     if (!nombre) {
-        showAlert('Error', 'Por favor, ingrese su nombre.', 'error', 'nombre');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'Por favor, ingrese su nombre.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
     if (!apellidos) {
-        showAlert('Error', 'Por favor, ingrese sus apellidos.', 'error', 'apellidos');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'Por favor, ingrese sus apellidos.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
     // Actualizar validación del teléfono para que sean exactamente 10 dígitos
     if (!telefono || !/^[0-9]{10}$/.test(telefono)) {
-        showAlert('Error', 'Por favor, ingrese un número de teléfono válido de 10 dígitos.', 'error', 'telefono');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'Por favor, ingrese un número de teléfono válido de 10 dígitos.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
@@ -46,24 +67,52 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
     // Reemplazar validación del correo con SweetAlert
     if (!correo || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
-        showAlert('Error', 'Por favor, ingrese un correo electrónico válido.', 'error', 'correo');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'Por favor, ingrese un correo electrónico válido.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
     if (!contrasena || !/(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}/.test(contrasena)) {
-        showAlert('Error', 'La contraseña debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.', 'error', 'contrasena');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'La contraseña debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
     // Validar que la confirmación de contraseña coincida con la contraseña
     const confirmarContrasena = document.getElementById('confirmar-contrasena').value.trim();
     if (contrasena !== confirmarContrasena) {
-        showAlert('Error', 'Las contraseñas no coinciden.', 'error', 'confirmar-contrasena');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'Las contraseñas no coinciden.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
     if (!termsCheck) {
-        showAlert('Error', 'Debe aceptar los términos y condiciones.', 'error', 'termsCheck');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'Debe aceptar los términos y condiciones.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
@@ -92,8 +141,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
         imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
         imageWidth: 200,  // Adjust the size 
         imageHeight: 300,
-        imageWidth: 100,
-        imageHeight: 100,
         confirmButtonText: 'Aceptar'
     });
 

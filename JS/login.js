@@ -18,12 +18,26 @@ document.querySelector('form').addEventListener('submit', function(event) {
     // Validación de campos vacíos
     // Reemplazar validación del correo con SweetAlert
     if (!correo || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
-        showAlert('Error', 'Por favor, ingrese un correo electrónico válido.', 'error', 'correo');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'Por favor, ingrese un correo electrónico válido.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+        });
         return;
     }
 
     if (!contrasena || !/(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}/.test(contrasena)) {
-        showAlert('Error', 'La contraseña debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.', 'error', 'contrasena');
+        Swal.fire({
+            title: '❌ Error',
+            text: 'La contraseña debe contener una mayúscula, un número, un carácter especial y al menos 8 caracteres.',
+            imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+            imageWidth: 200,  // Adjust the size 
+            imageHeight: 300,
+            confirmButtonText: 'Aceptar'
+            });
         return;
     }
 
