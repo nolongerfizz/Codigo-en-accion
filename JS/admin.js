@@ -49,6 +49,9 @@ form.addEventListener('submit', function (event) {
     // Mostrar mensaje de éxito
     mostrarMensaje('success', 'Amigurumi agregado correctamente.');
 
+    // Redirigir a la homepage
+    window.location.href = 'productos.html';
+
     // Limpiar el formulario
     form.reset();
   } catch (error) {
