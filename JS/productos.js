@@ -186,26 +186,103 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       return;
     }
+    // Aquí puedes poner la lógica para añadir al carrito si es necesario
+  });
 
-    const nombre = modalName.value;
-    const descripcion = modalDesc.value;
-    const tamaño = document.querySelector(".btn-size.active")?.textContent || "No seleccionado";
-    const empaque = empaqueCheckbox.checked ? "Sí" : "No";
-    const precio = precioFinal.textContent;
+  // Utilidad para obtener y actualizar el carrito en localStorage
+  function getCarrito() {
+    return JSON.parse(localStorage.getItem('carrito')) || [];
+  }
 
-    Swal.fire({
-       imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
-       imageWidth: 200,  // Adjust the size 
-       imageHeight: 300,
-       title: '✅ Pedido añadido',
-       html: `
-       <p><strong>Nombre:</strong> ${nombre}</p>
-       <p><strong>Tamaño:</strong> ${tamaño}</p>
-       <p><strong>Empaque:</strong> ${empaque}</p>
-       <p><strong>Precio:</strong> ${precio}</p>
-       <p><strong>Descripción:</strong> ${descripcion}</p>
-       `,
-       confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>',
+  function setCarrito(carrito) {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+
+  function actualizarContadorCarrito() {
+    const carrito = getCarrito();
+    let icono = document.querySelector('.cart .cart-count');
+    if (!icono) {
+      const cartIcon = document.querySelector('.cart');
+      if (!cartIcon) return;
+      icono = document.createElement('span');
+      icono.className = 'cart-count';
+      cartIcon.appendChild(icono);
+    }
+    icono.textContent = carrito.length;
+  }
+
+  const nombre = modalName.value;
+  const descripcion = modalDesc.value;
+  const tamaño = document.querySelector(".btn-size.active")?.textContent || "No seleccionado";
+  const empaque = empaqueCheckbox.checked ? "Sí" : "No";
+  const precio = precioFinal.textContent;
+
+  Swal.fire({
+     imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
+     imageWidth: 200,  // Adjust the size 
+     imageHeight: 300,
+     title: '✅ Pedido añadido',
+     html: `
+     <p><strong>Nombre:</strong> ${nombre}</p>
+     <p><strong>Tamaño:</strong> ${tamaño}</p>
+     <p><strong>Empaque:</strong> ${empaque}</p>
+     <p><strong>Precio:</strong> ${precio}</p>
+     <p><strong>Descripción:</strong> ${descripcion}</p>
+     `,
+     confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>'
+  });
+
+  function setupCarritoBtns() {
+    // Asegura que el evento se agregue siempre a los botones actuales
+    document.querySelectorAll('.btn-submit').forEach(btn => {
+      btn.onclick = function() {
+        const modal = btn.closest('.modal-content');
+        const nombre = modal.querySelector('.modal-name').value;
+        const descripcion = modal.querySelector('.modal-desc').value;
+        const tamañoBtn = modal.querySelector('.btn-size.active');
+        const tamaño = tamañoBtn ? tamañoBtn.dataset.size : '';
+        const precio = tamañoBtn ? tamañoBtn.dataset.precio : '0';
+        const empaque = modal.querySelector('#empaqueEspecial').checked;
+        const img = modal.querySelector('.modal-img').src;
+        // Validar que haya nombre, tamaño y descripción personalizada
+        if (!nombre || !tamaño || !descripcion.trim()) {
+          if (window.Swal) {
+            Swal.fire({
+              icon: 'warning',
+              title: 'Completa la selección',
+              text: !descripcion.trim() ? 'Debes personalizar el muñeco antes de añadirlo al carrito.' : 'Selecciona el tamaño antes de agregar al carrito'
+            });
+          }
+          return;
+        }
+        const producto = {
+          nombre,
+          descripcion,
+          tamaño,
+          precio: parseInt(precio),
+          empaque,
+          img
+        };
+        const carrito = getCarrito();
+        carrito.push(producto);
+        setCarrito(carrito);
+        actualizarContadorCarrito();
+        document.querySelector('#amigurumiModal .btn-close').click();
+        if (window.Swal) {
+          Swal.fire({icon:'success',title:'¡Añadido!',text:'Producto añadido al carrito',timer:1200,showConfirmButton:false});
+        }
+      }
     });
+  }
+
+  // Reasignar eventos cada vez que se abre el modal
+  const observer = new MutationObserver(() => {
+    setupCarritoBtns();
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    actualizarContadorCarrito();
+    setupCarritoBtns();
   });
 });
