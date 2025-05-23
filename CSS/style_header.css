@@ -62,7 +62,7 @@ header {
   }
   /* Icono login y carrito*/
 
-  .login, .cart {
+  .login, .cart, .admin {
     display: flex;
     /* gap:10px; */
     flex-direction: column;
@@ -73,17 +73,17 @@ header {
     transition: color 0.3s;
   }
 
-  .login i,
+  .login i, .admin,
   .cart i {
     font-size: 22px;
     transition: color 0.3s;
   }
-  .login:hover,
+  .login:hover, .admin:hover,
   .cart:hover {
     color: var(--atelier-blanco-nube);
   }
 
- .login span,
+ .login span, .admin span,
  .cart span {
    font-size: 14px;
    margin-top: 4px;
@@ -176,14 +176,14 @@ header {
    
   }
   @media (max-width: 760px) {
-    .login span,
+    .login span, .admin span,
     .cart span {
       font-size: 12px;
     }
 
   }
   @media (max-width: 550px) {
-    .login span,
+    .login span, .admin span,
     .cart span {
       display: none;
     }
