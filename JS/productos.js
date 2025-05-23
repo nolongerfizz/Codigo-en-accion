@@ -211,26 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     icono.textContent = carrito.length;
   }
 
-  const nombre = modalName.value;
-  const descripcion = modalDesc.value;
-  const tamaño = document.querySelector(".btn-size.active")?.textContent || "No seleccionado";
-  const empaque = empaqueCheckbox.checked ? "Sí" : "No";
-  const precio = precioFinal.textContent;
-
-  Swal.fire({
-     imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
-     imageWidth: 200,  // Adjust the size 
-     imageHeight: 300,
-     title: '✅ Pedido añadido',
-     html: `
-     <p><strong>Nombre:</strong> ${nombre}</p>
-     <p><strong>Tamaño:</strong> ${tamaño}</p>
-     <p><strong>Empaque:</strong> ${empaque}</p>
-     <p><strong>Precio:</strong> ${precio}</p>
-     <p><strong>Descripción:</strong> ${descripcion}</p>
-     `,
-     confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>'
-  });
+ 
 
   function setupCarritoBtns() {
     // Asegura que el evento se agregue siempre a los botones actuales
@@ -268,9 +249,26 @@ document.addEventListener("DOMContentLoaded", () => {
         setCarrito(carrito);
         actualizarContadorCarrito();
         document.querySelector('#amigurumiModal .btn-close').click();
-        if (window.Swal) {
-          Swal.fire({icon:'success',title:'¡Añadido!',text:'Producto añadido al carrito',timer:1200,showConfirmButton:false});
-        }
+        // Mostrar alerta de éxito personalizada
+        const nombreSwal = modal.querySelector('.modal-name').value;
+        const descripcionSwal = modal.querySelector('.modal-desc').value;
+        const tamañoSwal = modal.querySelector('.btn-size.active')?.textContent || 'No seleccionado';
+        const empaqueSwal = modal.querySelector('#empaqueEspecial').checked ? 'Sí' : 'No';
+        const precioSwal = document.getElementById('precioFinal').textContent;
+        Swal.fire({
+          imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
+          imageWidth: 200,
+          imageHeight: 300,
+          title: '✅ Pedido añadido',
+          html: `
+            <p><strong>Nombre:</strong> ${nombreSwal}</p>
+            <p><strong>Tamaño:</strong> ${tamañoSwal}</p>
+            <p><strong>Empaque:</strong> ${empaqueSwal}</p>
+            <p><strong>Precio:</strong> ${precioSwal}</p>
+            <p><strong>Descripción:</strong> ${descripcionSwal}</p>
+          `,
+          confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>'
+        });
       }
     });
   }

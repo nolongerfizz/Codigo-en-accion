@@ -58,6 +58,20 @@ function updateHeaderForLoggedUser() {
     }
 }
 
+function actualizarContadorCarritoHeader() {
+  // Obtiene el carrito del localStorage
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  let icono = document.querySelector('.cart .cart-count');
+  if (!icono) {
+    const cartIcon = document.querySelector('.cart');
+    if (!cartIcon) return;
+    icono = document.createElement('span');
+    icono.className = 'cart-count';
+    cartIcon.appendChild(icono);
+  }
+  icono.textContent = carrito.length;
+}
+
 // Cargar el header y activar el botón toggle
 loadComponent("header", "../components/header.html", function () {
     const menuToggle = document.getElementById('menu-toggle');
@@ -74,6 +88,12 @@ loadComponent("header", "../components/header.html", function () {
             }
         });
     }
+    // Mostrar el contador del carrito en el header después de cargarlo
+    actualizarContadorCarritoHeader();
+    // Escuchar cambios en el storage para actualizar el contador en tiempo real
+    window.addEventListener('storage', function(e) {
+      if (e.key === 'carrito') actualizarContadorCarritoHeader();
+    });
 });
 
 // Cargar el footer
