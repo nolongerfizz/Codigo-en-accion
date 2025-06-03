@@ -258,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
         Swal.fire({
           // imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
           imageUrl: img,
-          imageWidth: 200,
           imageHeight: 300,
           title: '✅ Pedido añadido',
           html: `
