@@ -256,7 +256,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const empaqueSwal = modal.querySelector('#empaqueEspecial').checked ? 'Sí' : 'No';
         const precioSwal = document.getElementById('precioFinal').textContent;
         Swal.fire({
-          imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
+          // imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
+          imageUrl: img,
           imageWidth: 200,
           imageHeight: 300,
           title: '✅ Pedido añadido',
