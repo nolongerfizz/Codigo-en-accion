@@ -42,7 +42,6 @@
 .modal-name,
 .modal-desc {
   background-color: var(--atelier-blanco-nube);
-  border: 1px solid var(--atelier-rosa-ternura);
   border-radius: 8px;
   padding: 10px;
   color: var(--atelier-negro-hilo);
@@ -95,10 +94,26 @@
 }
 
 /* Empaque especial visible */
-.form-check-lg {
-  font-size: 1rem;
-  background-color: var(--atelier-piel-suave);
-  border: 2px solid var(--atelier-rosa-ternura);
+#empaque {
+  padding: 16px;
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+#empaqueEspecial { 
+  border: 2px solid var(--atelier-negro-hilo);
+  position: relative !important;
+}
+
+#empaque .form-check-label {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--atelier-negro-hilo);
+}
+
+#empaque span{
+  font-weight: bold;
+  color: var(--atelier-rosa-zakura);
 }
 
 /* Precio total */

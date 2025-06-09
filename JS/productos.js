@@ -229,9 +229,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!nombre || !tamaño || !descripcion.trim()) {
           if (window.Swal) {
             Swal.fire({
-              icon: 'warning',
-              title: 'Completa la selección',
-              text: !descripcion.trim() ? 'Debes personalizar el muñeco antes de añadirlo al carrito.' : 'Selecciona el tamaño antes de agregar al carrito'
+              // Anadir alerta personalizada
+              imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+              imageWidth: 200,  // Adjust the size 
+              imageHeight: 300,
+              title: "❌ Falta eligir el tamaño",
+              text: "Por favor elige un tamaño antes de añadirlo al pedido.",
+              confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>',
             });
           }
           return;
@@ -256,8 +260,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const empaqueSwal = modal.querySelector('#empaqueEspecial').checked ? 'Sí' : 'No';
         const precioSwal = document.getElementById('precioFinal').textContent;
         Swal.fire({
-          imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
-          imageWidth: 200,
+          // imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png',
+          imageUrl: img,
           imageHeight: 300,
           title: '✅ Pedido añadido',
           html: `
