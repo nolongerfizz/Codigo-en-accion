@@ -229,9 +229,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!nombre || !tamaño || !descripcion.trim()) {
           if (window.Swal) {
             Swal.fire({
-              icon: 'warning',
-              title: 'Completa la selección',
-              text: !descripcion.trim() ? 'Debes personalizar el muñeco antes de añadirlo al carrito.' : 'Selecciona el tamaño antes de agregar al carrito'
+              // Anadir alerta personalizada
+              imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+              imageWidth: 200,  // Adjust the size 
+              imageHeight: 300,
+              title: "❌ Falta eligir el tamaño",
+              text: "Por favor elige un tamaño antes de añadirlo al pedido.",
+              confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>',
             });
           }
           return;
