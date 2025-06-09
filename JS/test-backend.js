@@ -1,5 +1,5 @@
 // JS/test-backend.js
-fetch('https://mbhybiq34m.us-east-1.awsapprunner.com')
+fetch('https://mbhybiq34m.us-east-1.awsapprunner.com/api/ping')
   .then(response => response.text())
   .then(data => {
     console.log('Respuesta del backend:', data);
