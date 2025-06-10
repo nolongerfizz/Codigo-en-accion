@@ -35,16 +35,19 @@ import { register } from "./authService.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Mostrar/ocultar contraseña
-  document.querySelectorAll('.btn-toggle-password').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const input = document.getElementById(btn.getAttribute('data-target'));
-      const icon = btn.querySelector('i');
-      const isPassword = input.type === 'password';
-      input.type = isPassword ? 'text' : 'password';
-      icon.classList.toggle('fa-eye');
-      icon.classList.toggle('fa-eye-slash');
+  setTimeout(() => {
+    document.querySelectorAll('.btn-toggle-password').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = document.getElementById(btn.getAttribute('data-target'));
+        const icon = btn.querySelector('i');
+        if (!input) return;
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+      });
     });
-  });
+  }, 0);
 
   // Formulario de registro
   const form = document.querySelector('form');
@@ -75,15 +78,22 @@ document.addEventListener("DOMContentLoaded", () => {
           title: '✅ Registro exitoso',
           text: 'Sus datos han sido registrados correctamente. Ahora puedes iniciar sesión.',
           imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png'
-        });
-        setTimeout(() => {
+        }).then(() => {
           window.location.href = 'login.html';
-        }, 2000);
+        });
         form.reset();
       } catch (err) {
+        // Intenta mostrar el mensaje real del backend si existe
+        let msg = err.message;
+        if (err.response) {
+          try {
+            const data = await err.response.json();
+            msg = data.message || msg;
+          } catch {}
+        }
         showAlert({
           title: '❌ Error',
-          text: 'Error en el registro: ' + (err.message || 'Intenta de nuevo más tarde.'),
+          text: 'Error en el registro: ' + (msg || 'Intenta de nuevo más tarde.'),
           icon: 'error',
           imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png'
         });
