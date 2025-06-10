@@ -71,10 +71,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
       try {
-        await register(fields.nombre, fields.correo, fields.contrasena, fields.telefono);
+        const response = await register(fields.nombre, fields.correo, fields.contrasena, fields.telefono);
+        // Si el backend responde con texto plano de éxito, muéstralo
+        let successMsg = 'Sus datos han sido registrados correctamente. Ahora puedes iniciar sesión.';
+        if (typeof response === 'string') {
+          successMsg = response;
+        } else if (response && response.message) {
+          successMsg = response.message;
+        }
         await showAlert({
           title: '✅ Registro exitoso',
-          text: 'Sus datos han sido registrados correctamente. Ahora puedes iniciar sesión.',
+          text: successMsg,
           imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png'
         });
         form.reset();
@@ -83,14 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
         let msg = err.message;
         if (err.response) {
           try {
-            // Intenta primero como JSON
-            const data = await err.response.clone().json();
-            msg = data.message || msg;
+            // Intenta primero como texto (el backend responde texto plano)
+            const text = await err.response.clone().text();
+            msg = text || msg;
           } catch {
             try {
-              // Si falla, intenta como texto
-              const text = await err.response.clone().text();
-              msg = text || msg;
+              // Si falla, intenta como JSON
+              const data = await err.response.clone().json();
+              msg = data.message || msg;
             } catch {}
           }
         }
