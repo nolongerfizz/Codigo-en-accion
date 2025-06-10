@@ -18,17 +18,20 @@ export async function register(nombre, email, password, telefono) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ nombre, correo: email, contrasena: password, telefono }),
   });
+  const contentType = res.headers.get("content-type");
+  let data;
+  if (contentType && contentType.includes("application/json")) {
+    data = await res.json();
+  } else {
+    data = await res.text();
+  }
   if (!res.ok) {
-    let msg = "Registro fallido";
-    try {
-      const data = await res.json();
-      msg = data.message || msg;
-    } catch {}
+    let msg = typeof data === "string" ? data : (data.message || "Registro fallido");
     const error = new Error(msg);
     error.response = res;
     throw error;
   }
-  return await res.json();
+  return data;
 }
 
 export function getToken() {
