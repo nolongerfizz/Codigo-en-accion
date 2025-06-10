@@ -75,9 +75,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         window.location.href = '../HTML/productos.html';
       } catch (err) {
+        let msg = 'Usuario o contraseña incorrectos';
+        if (err.response) {
+          try {
+            const text = await err.response.clone().text();
+            msg = text || msg;
+          } catch {
+            try {
+              const data = await err.response.clone().json();
+              msg = data.message || msg;
+            } catch {}
+          }
+        }
         showAlert({
           title: '❌ Error',
-          text: 'Usuario o contraseña incorrectos',
+          text: msg,
           icon: 'error',
           imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png'
         });
