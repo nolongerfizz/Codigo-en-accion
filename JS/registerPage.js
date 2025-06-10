@@ -53,10 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async function(e) {
       e.preventDefault();
       const fields = {
-        nombre: document.getElementById('nombre').value.trim(),
-        telefono: document.getElementById('telefono').value.trim(),
+        nombre: document.getElementById('nombre').value.trim(),        
         correo: document.getElementById('correo').value.trim(),
         contrasena: document.getElementById('contrasena').value.trim(),
+        telefono: document.getElementById('telefono').value.trim(),
         confirmarContrasena: document.getElementById('confirmar-contrasena').value.trim(),
         termsCheck: document.getElementById('termsCheck').checked
       };
@@ -72,14 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       try {
         await register(fields.nombre, fields.correo, fields.contrasena, fields.telefono);
-        showAlert({
+        await showAlert({
           title: '✅ Registro exitoso',
           text: 'Sus datos han sido registrados correctamente. Ahora puedes iniciar sesión.',
           imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png'
-        }).then(() => {
-          window.location.href = 'login.html';
         });
         form.reset();
+        window.location.href = 'login.html';
       } catch (err) {
         // Intenta mostrar el mensaje real del backend si existe
         let msg = err.message;
