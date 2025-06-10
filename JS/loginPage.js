@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
           text: 'Inicio de sesión exitoso.',
           imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png'
         });
-        window.location.href = '/productos.html';
+        window.location.href = '../HTML/productos.html';
       } catch (err) {
         showAlert({
           title: '❌ Error',

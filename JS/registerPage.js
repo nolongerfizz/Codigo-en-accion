@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
           imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png'
         });
         form.reset();
-        window.location.href = 'login.html';
+        window.location.href = '../HTML/login.html';
       } catch (err) {
         let msg = err.message;
         if (err.response) {
