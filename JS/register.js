@@ -20,14 +20,13 @@ function fakeHash(password) {
 
 // === ✅ VALIDACIÓN === //
 function validateForm(fields) {
-  const { nombre, apellidos, telefono, correo, contrasena, confirmarContrasena, termsCheck } = fields;
+  const { nombre, telefono, correo, contrasena, confirmarContrasena, termsCheck } = fields;
 
   const regexTelefono = /^\d{10}$/;
   const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const regexContrasena = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;
 
-  if (!nombre) return { valid: false, msg: 'Por favor, ingrese su nombre.', field: 'nombre' };
-  if (!apellidos) return { valid: false, msg: 'Por favor, ingrese sus apellidos.', field: 'apellidos' };
+  if (!nombre) return { valid: false, msg: 'Por favor, ingrese su nombre.', field: 'nombre' };  
   if (!telefono || !regexTelefono.test(telefono)) return { valid: false, msg: 'Ingrese un teléfono válido de 10 dígitos.', field: 'telefono' };
   if (!correo || !regexCorreo.test(correo)) return { valid: false, msg: 'Ingrese un correo electrónico válido.', field: 'correo' };
   if (!contrasena || !regexContrasena.test(contrasena)) return { valid: false, msg: 'La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial.', field: 'contrasena' };
@@ -42,8 +41,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
   event.preventDefault();
 
   const fields = {
-    nombre: document.getElementById('nombre').value.trim(),
-    apellidos: document.getElementById('apellidos').value.trim(),
+    nombre: document.getElementById('nombre').value.trim(),    
     telefono: document.getElementById('telefono').value.trim(),
     correo: document.getElementById('correo').value.trim(),
     contrasena: document.getElementById('contrasena').value.trim(),
