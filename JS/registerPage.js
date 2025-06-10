@@ -34,20 +34,18 @@ function validateForm(fields) {
 import { register } from "./authService.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Mostrar/ocultar contraseña
-  setTimeout(() => {
-    document.querySelectorAll('.btn-toggle-password').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const input = document.getElementById(btn.getAttribute('data-target'));
-        const icon = btn.querySelector('i');
-        if (!input) return;
-        const isPassword = input.type === 'password';
-        input.type = isPassword ? 'text' : 'password';
-        icon.classList.toggle('fa-eye');
-        icon.classList.toggle('fa-eye-slash');
-      });
+  // Mostrar/ocultar contraseña (usando toggle como en register.js)
+  document.querySelectorAll('.btn-toggle-password').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = document.getElementById(btn.getAttribute('data-target'));
+      const icon = btn.querySelector('i');
+      if (!input || !icon) return;
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      icon.classList.toggle('fa-eye');
+      icon.classList.toggle('fa-eye-slash');
     });
-  }, 0);
+  });
 
   // Formulario de registro
   const form = document.querySelector('form');
