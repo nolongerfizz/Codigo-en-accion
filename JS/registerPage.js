@@ -80,13 +80,19 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset();
         window.location.href = 'login.html';
       } catch (err) {
-        // Intenta mostrar el mensaje real del backend si existe
         let msg = err.message;
         if (err.response) {
           try {
-            const data = await err.response.json();
+            // Intenta primero como JSON
+            const data = await err.response.clone().json();
             msg = data.message || msg;
-          } catch {}
+          } catch {
+            try {
+              // Si falla, intenta como texto
+              const text = await err.response.clone().text();
+              msg = text || msg;
+            } catch {}
+          }
         }
         showAlert({
           title: '❌ Error',
