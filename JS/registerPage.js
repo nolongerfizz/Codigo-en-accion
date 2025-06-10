@@ -1,32 +1,92 @@
+// === ✅ ALERTAS CON SWEETALERT2 === //
+function showAlert({ title = '', text = '', icon = 'info', imageUrl = '', focusElementId = '' }) {
+  Swal.fire({
+    title,
+    text,
+    icon: imageUrl ? undefined : icon,
+    imageUrl: imageUrl || undefined,
+    imageWidth: 200,
+    imageHeight: 300,
+    confirmButtonText: '<span class="custom-swal-btn">Aceptar</span>'
+  }).then(() => {
+    if (focusElementId) document.getElementById(focusElementId)?.focus();
+  });
+}
+
+// === ✅ VALIDACIÓN === //
+function validateForm(fields) {
+  const { nombre, telefono, correo, contrasena, confirmarContrasena, termsCheck } = fields;
+
+  const regexTelefono = /^\d{10}$/;
+  const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const regexContrasena = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;
+
+  if (!nombre) return { valid: false, msg: 'Por favor, ingrese su nombre.', field: 'nombre' };
+  if (!telefono || !regexTelefono.test(telefono)) return { valid: false, msg: 'Ingrese un teléfono válido de 10 dígitos.', field: 'telefono' };
+  if (!correo || !regexCorreo.test(correo)) return { valid: false, msg: 'Ingrese un correo electrónico válido.', field: 'correo' };
+  if (!contrasena || !regexContrasena.test(contrasena)) return { valid: false, msg: 'La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial.', field: 'contrasena' };
+  if (contrasena !== confirmarContrasena) return { valid: false, msg: 'Las contraseñas no coinciden.', field: 'confirmar-contrasena' };
+  if (!termsCheck) return { valid: false, msg: 'Debe aceptar los términos y condiciones.', field: null };
+
+  return { valid: true };
+}
+
 import { register } from "./authService.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("registerForm");
+  // Mostrar/ocultar contraseña
+  document.querySelectorAll('.btn-toggle-password').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = document.getElementById(btn.getAttribute('data-target'));
+      const icon = btn.querySelector('i');
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      icon.classList.toggle('fa-eye');
+      icon.classList.toggle('fa-eye-slash');
+    });
+  });
+
+  // Formulario de registro
+  const form = document.querySelector('form');
   if (form) {
     form.addEventListener("submit", async function(e) {
       e.preventDefault();
-      const nombre = document.getElementById("nombre").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-      const confirmarPassword = document.getElementById("confirmar-password").value;
-      const telefono = document.getElementById("telefono").value.trim();
-      const termsCheck = document.getElementById("termsCheck").checked;
-
-      if (!termsCheck) {
-        alert("Debes aceptar los términos y condiciones.");
-        return;
+      const fields = {
+        nombre: document.getElementById('nombre').value.trim(),
+        telefono: document.getElementById('telefono').value.trim(),
+        correo: document.getElementById('correo').value.trim(),
+        contrasena: document.getElementById('contrasena').value.trim(),
+        confirmarContrasena: document.getElementById('confirmar-contrasena').value.trim(),
+        termsCheck: document.getElementById('termsCheck').checked
+      };
+      const validation = validateForm(fields);
+      if (!validation.valid) {
+        return showAlert({
+          title: '❌ Error',
+          text: validation.msg,
+          icon: 'error',
+          imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png',
+          focusElementId: validation.field
+        });
       }
-      if (password !== confirmarPassword) {
-        alert("Las contraseñas no coinciden.");
-        return;
-      }
-
       try {
-        await register(nombre, email, password, telefono);
-        alert("Registro exitoso. Ahora puedes iniciar sesión.");
-        window.location.href = "/login.html";
+        await register(fields.nombre, fields.correo, fields.contrasena, fields.telefono);
+        showAlert({
+          title: '✅ Registro exitoso',
+          text: 'Sus datos han sido registrados correctamente. Ahora puedes iniciar sesión.',
+          imageUrl: '../assets/amigurumipng/basespng/amigurumiSuccessHappy.png'
+        });
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 2000);
+        form.reset();
       } catch (err) {
-        alert("Error en el registro: " + err.message);
+        showAlert({
+          title: '❌ Error',
+          text: 'Error en el registro: ' + (err.message || 'Intenta de nuevo más tarde.'),
+          icon: 'error',
+          imageUrl: '../assets/amigurumipng/basespng/amigurumiErrorChopper.png'
+        });
       }
     });
   }
